@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alina Shalukhina · Mathematician</title>
+
+  <!-- 1. PASTE YOUR ADOBE FONTS LINK BELOW THIS LINE -->
+  <link rel="stylesheet" href="https://use.typekit.net/tog7nhn.css">
+
+  <!-- Fallback Editorial Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- 2. KaTeX for rendering LaTeX in paper titles and text -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="brand">Alina Shalukhina</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark/light mode">◑ Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Harmonic Analysis · Functional Spaces</p>
+        <h1>Alina Shalukhina</h1>
+        <p class="lead">
+          Mathematician working in Harmonic Analysis and Variable Lebesgue Spaces. 
+          Member of the <strong>European Mathematical Society Young Academy (EMYA, 2027–2030)</strong>.
+        </p>
+        <div class="hero-actions">
+          <a href="#publications" class="btn btn-primary">Publications</a>
+          <!-- Upload cv.pdf to your repository to make this button open your CV -->
+          <a href="cv.pdf" target="_blank" class="btn btn-outline">Curriculum Vitae (PDF) ↗</a>
+        </div>
+        <div class="profile-links">
+          <a href="https://orcid.org/" target="_blank">ORCID ↗</a>
+          <a href="https://arxiv.org/" target="_blank">arXiv ↗</a>
+          <a href="https://scholar.google.com/" target="_blank">Google Scholar ↗</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <!-- Upload avatar.jpg to your repository to display your photo, or keep this minimal card -->
+        <div class="meta-block">
+          <span class="meta-label">Research Focus</span>
+          <p>Maximal operators, variable exponent Lebesgue spaces $L^{p(\cdot)}$, and spaces of homogeneous type $(X, d, \mu)$.</p>
+        </div>
+        <div class="meta-block">
+          <span class="meta-label">Recognition</span>
+          <p>EMS Young Academy Member (2027–2030)</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT & RESEARCH SECTION -->
+    <section id="about" class="section split-section">
+      <div class="section-header">
+        <p class="eyebrow">01 / Profile</p>
+        <h2>About &amp; Research</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          My mathematical research centers on <strong>Harmonic Analysis</strong> and operator theory on function spaces with non-standard growth. In particular, my doctoral thesis investigates the boundedness of the Hardy–Littlewood maximal operator $\mathcal{M}$ on variable Lebesgue spaces $L^{p(\cdot)}(X)$ defined over spaces of homogeneous type $(X, d, \mu)$.
+        </p>
+        <p>
+          Alongside pure analytical theory, I am deeply interested in interdisciplinary mathematical modeling and quantitative R&amp;D applications in medicine.
+        </p>
+
+        <div id="research" class="research-grid">
+          <div class="research-card">
+            <span class="math-icon">$\mathcal{M}f$</span>
+            <h3>Maximal &amp; Singular Operators</h3>
+            <p>Boundedness criteria, log-Hölder continuity conditions, and weighted inequalities for operators in harmonic analysis.</p>
+          </div>
+          <div class="research-card">
+            <span class="math-icon">$L^{p(\cdot)}$</span>
+            <h3>Spaces of Homogeneous Type</h3>
+            <p>Analysis on metric measure spaces $(X, d, \mu)$ equipped with a quasi-metric and a doubling measure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE PUBLICATIONS SECTION -->
+    <section id="publications" class="section">
+      <div class="pub-header-row">
+        <div>
+          <p class="eyebrow">02 / Selected Work</p>
+          <h2>Publications &amp; Preprints</h2>
+        </div>
+        <span id="pub-count" class="pub-count">0 publications</span>
+      </div>
+
+      <!-- Interactive Controls -->
+      <div class="pub-controls">
+        <input type="search" id="pub-search" class="pub-search" placeholder="Search titles, coauthors, journals, or keywords...">
+        <div id="year-filters" class="year-pills"></div>
+        <select id="pub-sort" class="pub-sort" aria-label="Sort publications">
+          <option value="desc">Newest first</option>
+          <option value="asc">Oldest first</option>
+        </select>
+      </div>
+
+      <!-- JavaScript automatically populates this list -->
+      <div id="pub-list" class="pub-list"></div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
+      <p class="eyebrow">03 / Contact</p>
+      <h2>Get in touch</h2>
+      <p>For academic collaborations, speaking invitations, or EMYA initiatives:</p>
+      <a href="mailto:your.email@university.edu" class="email-link">your.email@university.edu →</a>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© 2026 Alina Shalukhina · Hosted on GitHub Pages · Typeset with KaTeX &amp; Adobe Fonts</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
