@@ -93,7 +93,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   text-transform: uppercase;
   letter-spacing: 0.15em; /* Wide spacing for that classic magazine look */
   font-size: 0.7rem; /* Smaller size because wide/bold fonts take up more room */
-  font-weight: 400; /* Bold weight for a sturdy, authoritative appearance */
+  font-weight: 450; /* Bold weight for a sturdy, authoritative appearance */
   color: var(--accent);
   margin-bottom: 0.75rem;
 }
