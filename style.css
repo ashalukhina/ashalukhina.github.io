@@ -243,14 +243,15 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
 }
 .pub-year {
   font-family: var(--font-accent);
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 1.1rem;
-  padding-top: 0.2rem;
+  font-weight: 400; /* Changed from 600 to 400 to remove the heavy boldness */
+  color: var(--accent); /* Brings back your bright mailbox red */
+  font-size: 0.95rem; /* Shrunk down so it doesn't overpower the titles */
+  padding-top: 0.25rem; 
 }
 .pub-title { 
-  font-family: var(--font-serif);
+  font-family: var(--font-serif); 
   font-size: 1.25rem; 
+  font-weight: 400; /* Changed from 600 to 400 for normal text */
   margin-bottom: 0.4rem; 
 }
 .pub-meta { font-size: 1rem; color: var(--text-muted); margin-bottom: 0.9rem; }
