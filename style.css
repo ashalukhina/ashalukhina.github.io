@@ -324,3 +324,33 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   min-width: auto;
   cursor: pointer;
 }
+
+/* BibTeX Copy Button Styles */
+.bibtex-wrapper {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.bibtex-wrapper .bibtex-box {
+  margin-top: 0; /* Prevents double margins */
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
