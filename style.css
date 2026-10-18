@@ -248,7 +248,12 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   font-size: 1.1rem;
   padding-top: 0.2rem;
 }
-.pub-title { font-size: 1.2rem; font-weight: 500; margin-bottom: 0.4rem; }
+.pub-title { 
+  font-family: var(--font-serif);
+  font-size: 1.25rem; 
+  font-weight: 600; 
+  margin-bottom: 0.4rem; 
+}
 .pub-meta { font-size: 1rem; color: var(--text-muted); margin-bottom: 0.9rem; }
 .pub-links { display: flex; gap: 0.5rem; flex-wrap: wrap; font-family: var(--font-sans); }
 .pub-badge {
@@ -304,4 +309,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   border-radius: 8px;
   object-fit: cover;
   border: 1px solid var(--border);
+}
+.katex {
+  font-size: 1.02em; 
 }
