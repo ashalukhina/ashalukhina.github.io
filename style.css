@@ -314,6 +314,9 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   font-size: 1.02em; 
 }
 #pub-sort {
-  padding-right: 2.5rem; /* Adds comfortable space on the right edge for the arrow */
+  padding-right: 2.25rem; /* Ensures the text doesn't overlap the arrow */
+  background-position: right 0.8rem center; /* Pushes the arrow safely away from the right edge */
+  width: auto;
+  min-width: auto;
   cursor: pointer;
 }
