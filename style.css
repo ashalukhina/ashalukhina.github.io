@@ -1,17 +1,17 @@
 :root {
   --bg: #FFFFFF; /* Pure white background */
-  --surface: #FBEFE9; /* Warm, pale skin-like peachy beige */
-  --surface-subtle: #F2E3DB; /* Slightly deeper warm tone for hovers/buttons */
+  --surface: #F7F7F5; /* Meduza-style cool, pale neutral beige */
+  --surface-subtle: #F0F0EC; /* Slightly deeper neutral for hovers/buttons */
   --text: #111110;
   --text-muted: #66635B;
-  --border: #E5D3C8; /* Warmer border to match the new skin tones */
-  --accent: #E62B1E;
+  --border: #E6E6E1; /* Cool neutral border */
+  --accent: #E62B1E; 
   --accent-soft: rgba(230, 43, 30, 0.08);
 
   /* Your Adobe Fonts */
   --font-serif: "freight-text-pro", Georgia, serif;
   --font-sans: "proxima-nova", -apple-system, sans-serif;
-  --font-accent: "cofo-cinema1909", serif;
+  --font-accent: "mostra-nuova", sans-serif; /* (Or whichever sans-serif you chose for the eyebrows) */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
