@@ -254,10 +254,10 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
 .pub-title { 
   font-family: var(--font-serif); 
   font-size: 1.25rem; 
-  font-weight: 400; 
-  margin-top: 0; /* Removes any hidden default spacing above the title */
+  font-weight: 600; /* Changed back to 600 for a strong, bold title */
+  margin-top: 0; 
   margin-bottom: 0.4rem; 
-  line-height: 1.2; /* Matches the year's line height for perfect alignment */
+  line-height: 1.2; 
 }
 .pub-meta { font-size: 1rem; color: var(--text-muted); margin-bottom: 0.9rem; }
 .pub-links { display: flex; gap: 0.5rem; flex-wrap: wrap; font-family: var(--font-sans); }
