@@ -312,3 +312,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
 .katex {
   font-size: 1.02em; 
 }
+#pub-sort {
+  padding-right: 2.5rem; /* Adds comfortable space on the right edge for the arrow */
+  cursor: pointer;
+}
