@@ -11,15 +11,16 @@ const PUBLICATIONS = [
     pdf: "#", // <-- Added placeholder so PDF button appears first!
     arxiv: "",
     doi: "https://doi.org/10.1007/s13324-026-01215-5",
-    bibtex: `@article{shalukhina2026maximal,
-  author = {Shalukhina, A.},
-  title = {The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good},
-  journal = {Analysis and Mathematical Physics},
-  volume = {16},
-  number = {3},
-  year = {2026},
-  note = {Paper no. 63},
-  doi = {10.1007/s13324-026-01215-5}
+    bibtex: `@article{AS26cubes,
+  AUTHOR = {Shalukhina, Alina},
+  TITLE = {The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good},
+  JOURNAL = {Anal. Math. Phys.},
+  FJOURNAL = {Analysis and Mathematical Physics},
+  VOLUME = {16},
+  NUMBER = {3},
+  YEAR = {2026},
+  PAGES = {Paper no. 63},
+  DOI = {10.1007/s13324-026-01215-5}
 }`
   },
   {
