@@ -148,7 +148,7 @@ function renderPublications() {
       <div class="pub-year">${p.year}</div>
       <div>
         <h3 class="pub-title">${p.title}</h3>
-        <p class="pub-meta">${p.authors} · <em>${p.venue}</em></p>
+        <p class="pub-meta">${p.authors} · ${p.venue}</p>
         <div class="pub-links">
           ${p.pdf ? `<a href="${p.pdf}" target="_blank" class="pub-badge">PDF ↗</a>` : ""}
           ${p.arxiv ? `<a href="${p.arxiv}" target="_blank" class="pub-badge">arXiv</a>` : ""}
@@ -157,14 +157,19 @@ function renderPublications() {
         </div>
         ${p.bibtex ? `
         <div id="bib-${idx}" class="bibtex-wrapper" hidden>
-          <button class="copy-btn" data-idx="${idx}">Copy</button>
+          <button class="copy-btn" data-idx="${idx}" title="Copy to clipboard">
+            <!-- Double Rectangle Copy Icon -->
+            <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
           <pre class="bibtex-box">${p.bibtex}</pre>
         </div>` : ""}
       </div>
     </article>
   `).join("");
 
-  // Toggle the Cite drawer
   pubListEl.querySelectorAll(".cite-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const box = document.getElementById(`bib-${btn.dataset.idx}`);
@@ -172,20 +177,26 @@ function renderPublications() {
     });
   });
 
-  // Copy to clipboard logic
+  // Updated Copy to clipboard logic (Swaps to a checkmark icon)
   pubListEl.querySelectorAll(".copy-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const pub = filtered[btn.dataset.idx];
       navigator.clipboard.writeText(pub.bibtex).then(() => {
-        btn.textContent = "Copied!";
-        setTimeout(() => btn.textContent = "Copy", 2000); // Changes back after 2 seconds
+        const originalHTML = btn.innerHTML;
+        // Swap to checkmark
+        btn.innerHTML = `<svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+        btn.style.color = "var(--accent)"; // Make checkmark red to show success
+        
+        setTimeout(() => {
+          btn.innerHTML = originalHTML; // Revert to double rectangle
+          btn.style.color = "";
+        }, 2000);
       });
     });
   });
 
   renderMath(pubListEl);
 }
-
 searchInput.addEventListener("input", e => {
   searchQuery = e.target.value;
   renderPublications();
