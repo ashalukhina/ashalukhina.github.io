@@ -318,8 +318,8 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   font-size: 1.02em; 
 }
 #pub-sort {
-  padding-right: 2.25rem; /* Ensures the text doesn't overlap the arrow */
-  background-position: right 0.8rem center; /* Pushes the arrow safely away from the right edge */
+  padding-right: 1.5rem; /* Just enough total room for a small gap and the arrow */
+  background-position: right 0.5rem center; /* Places the arrow exactly one small space away from the right edge */
   width: auto;
   min-width: auto;
   cursor: pointer;
