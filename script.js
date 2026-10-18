@@ -144,10 +144,18 @@ function renderPublications() {
     return;
   }
 
-  pubListEl.innerHTML = filtered.map((p, idx) => `
-    <article class="pub-item">
-      <div class="pub-year">${p.year}</div>
-      <div>
+  let currentYear = null; // Tracks the year to group entries
+
+  pubListEl.innerHTML = filtered.map((p, idx) => {
+    const isFirstOfYear = p.year !== currentYear;
+    currentYear = p.year;
+
+    return `
+    <article class="pub-item ${isFirstOfYear ? 'new-year' : 'same-year'}">
+      <!-- Only print the year if it's the first time we see it -->
+      <div class="pub-year">${isFirstOfYear ? p.year : ''}</div>
+      
+      <div class="pub-content">
         <h3 class="pub-title">${p.title}</h3>
         <p class="pub-meta">${p.authors} · ${p.venue}</p>
         <div class="pub-links">
@@ -159,7 +167,6 @@ function renderPublications() {
         ${p.bibtex ? `
         <div id="bib-${idx}" class="bibtex-wrapper" hidden>
           <button class="copy-btn" data-idx="${idx}" title="Copy to clipboard">
-            <!-- Double Rectangle Copy Icon -->
             <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
               <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -169,7 +176,7 @@ function renderPublications() {
         </div>` : ""}
       </div>
     </article>
-  `).join("");
+  `}).join("");
 
   pubListEl.querySelectorAll(".cite-btn").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -178,18 +185,15 @@ function renderPublications() {
     });
   });
 
-  // Updated Copy to clipboard logic (Swaps to a checkmark icon)
   pubListEl.querySelectorAll(".copy-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const pub = filtered[btn.dataset.idx];
       navigator.clipboard.writeText(pub.bibtex).then(() => {
         const originalHTML = btn.innerHTML;
-        // Swap to checkmark
         btn.innerHTML = `<svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
-        btn.style.color = "var(--accent)"; // Make checkmark red to show success
-        
+        btn.style.color = "var(--accent)";
         setTimeout(() => {
-          btn.innerHTML = originalHTML; // Revert to double rectangle
+          btn.innerHTML = originalHTML;
           btn.style.color = "";
         }, 2000);
       });
@@ -198,6 +202,7 @@ function renderPublications() {
 
   renderMath(pubListEl);
 }
+
 searchInput.addEventListener("input", e => {
   searchQuery = e.target.value;
   renderPublications();
