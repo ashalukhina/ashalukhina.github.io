@@ -243,16 +243,20 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
 }
 .pub-year {
   font-family: var(--font-accent);
-  font-weight: 400; /* Changed from 600 to 400 to remove the heavy boldness */
-  color: var(--accent); /* Brings back your bright mailbox red */
-  font-size: 0.95rem; /* Shrunk down so it doesn't overpower the titles */
-  padding-top: 0.25rem; 
+  font-weight: 400;
+  color: var(--accent);
+  font-size: 1.15rem; /* Increased to better match the title's size */
+  padding-top: 0; /* Removed the padding that was pushing it down */
+  margin-top: 0; /* Ensures it sits exactly at the top */
+  line-height: 1.2;
 }
 .pub-title { 
   font-family: var(--font-serif); 
   font-size: 1.25rem; 
-  font-weight: 400; /* Changed from 600 to 400 for normal text */
+  font-weight: 400; 
+  margin-top: 0; /* Removes any hidden default spacing above the title */
   margin-bottom: 0.4rem; 
+  line-height: 1.2; /* Matches the year's line height for perfect alignment */
 }
 .pub-meta { font-size: 1rem; color: var(--text-muted); margin-bottom: 0.9rem; }
 .pub-links { display: flex; gap: 0.5rem; flex-wrap: wrap; font-family: var(--font-sans); }
