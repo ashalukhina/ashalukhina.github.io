@@ -148,8 +148,7 @@ function renderPublications() {
       <div class="pub-year">${p.year}</div>
       <div>
         <h3 class="pub-title">${p.title}</h3>
-        <!-- Notice below: removed the <em> tags from around ${p.venue} -->
-        <p class="pub-meta">${p.authors} · ${p.venue}</p>
+        <p class="pub-meta">${p.authors} · <em>${p.venue}</em></p>
         <div class="pub-links">
           ${p.pdf ? `<a href="${p.pdf}" target="_blank" class="pub-badge">PDF ↗</a>` : ""}
           ${p.arxiv ? `<a href="${p.arxiv}" target="_blank" class="pub-badge">arXiv</a>` : ""}
@@ -165,6 +164,7 @@ function renderPublications() {
     </article>
   `).join("");
 
+  // Toggle the Cite drawer
   pubListEl.querySelectorAll(".cite-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const box = document.getElementById(`bib-${btn.dataset.idx}`);
@@ -172,12 +172,13 @@ function renderPublications() {
     });
   });
 
+  // Copy to clipboard logic
   pubListEl.querySelectorAll(".copy-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const pub = filtered[btn.dataset.idx];
       navigator.clipboard.writeText(pub.bibtex).then(() => {
         btn.textContent = "Copied!";
-        setTimeout(() => btn.textContent = "Copy", 2000);
+        setTimeout(() => btn.textContent = "Copy", 2000); // Changes back after 2 seconds
       });
     });
   });
