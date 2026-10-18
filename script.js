@@ -1,14 +1,5 @@
 // ============================================================================
 // 1. YOUR PUBLICATIONS DATABASE
-// Add a 'type' property to each entry (e.g., "Journal Article" or "Book Chapter")
-// ============================================================================
-// ============================================================================
-// 1. YOUR PUBLICATIONS DATABASE
-// Add a 'type' property to each entry (e.g., "Journal Article" or "Book Chapter")
-// ============================================================================
-// ============================================================================
-// 1. YOUR PUBLICATIONS DATABASE
-// Add a 'type' property to each entry (e.g., "Journal Article" or "Book Chapter")
 // ============================================================================
 const PUBLICATIONS = [
   {
@@ -16,8 +7,8 @@ const PUBLICATIONS = [
     year: 2026,
     title: "The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good",
     authors: "A. Shalukhina",
-    venue: "Analysis and Mathematical Physics 16.3, Paper no. 63",
-    pdf: "",
+    venue: "<em>Analysis and Mathematical Physics</em> 16.3, Paper no. 63",
+    pdf: "#", // <-- Added placeholder so PDF button appears first!
     arxiv: "",
     doi: "https://doi.org/10.1007/s13324-026-01215-5",
     bibtex: `@article{shalukhina2026maximal,
@@ -36,8 +27,8 @@ const PUBLICATIONS = [
     year: 2025,
     title: "Self-improving boundedness of the maximal operator on quasi-Banach lattices over spaces of homogeneous type",
     authors: "A. Shalukhina",
-    venue: "Journal of Mathematical Analysis and Applications 548.2, Paper no. 129419",
-    pdf: "",
+    venue: "<em>Journal of Mathematical Analysis and Applications</em> 548.2, Paper no. 129419",
+    pdf: "#", // Replace "#" with your actual PDF file paths later
     arxiv: "",
     doi: "https://doi.org/10.1016/j.jmaa.2025.129419",
     bibtex: `@article{shalukhina2025selfimproving,
@@ -56,8 +47,8 @@ const PUBLICATIONS = [
     year: 2025,
     title: "A necessary condition for the boundedness of the maximal operator on $L^{p(\\cdot)}$ over reverse doubling spaces of homogeneous type",
     authors: "O. Karlovych and A. Shalukhina",
-    venue: "Analysis Mathematica 51.1, 241–248",
-    pdf: "",
+    venue: "<em>Analysis Mathematica</em> 51.1, 241–248",
+    pdf: "#",
     arxiv: "",
     doi: "https://doi.org/10.1007/s10476-024-00053-6",
     bibtex: `@article{karlovych2025necessary,
@@ -76,8 +67,8 @@ const PUBLICATIONS = [
     year: 2022,
     title: "On the extension of the reverse Hölder inequality for power functions on the real axis",
     authors: "A. Shalukhina",
-    venue: "Real Analysis Exchange 47.2, 425–434",
-    pdf: "",
+    venue: "<em>Real Analysis Exchange</em> 47.2, 425–434",
+    pdf: "#",
     arxiv: "",
     doi: "https://doi.org/10.14321/realanalexch.47.2.1653382423",
     bibtex: `@article{shalukhina2022extension,
@@ -94,9 +85,9 @@ const PUBLICATIONS = [
 ];
 
 // ============================================================================
-// 2. INTERACTIVE ENGINE (Search, Type Filters, Sort, Cite Drawer, KaTeX)
+// 2. INTERACTIVE ENGINE
 // ============================================================================
-let activeType = "All"; // Now filters by type instead of year
+let activeType = "All";
 let searchQuery = "";
 let sortOrder = "desc";
 
@@ -119,7 +110,6 @@ function renderMath(element) {
 }
 
 function renderFilters() {
-  // Automatically generate buttons based on the types in your database
   const types = ["All", ...new Set(PUBLICATIONS.map(p => p.type))].filter(Boolean);
   
   filterContainerEl.innerHTML = types.map(t => `
@@ -139,7 +129,7 @@ function renderFilters() {
 
 function renderPublications() {
   const filtered = PUBLICATIONS
-    .filter(p => activeType === "All" || p.type === activeType) // Filter by the new type
+    .filter(p => activeType === "All" || p.type === activeType)
     .filter(p => {
       const text = `${p.title} ${p.authors} ${p.venue} ${p.year}`.toLowerCase();
       return text.includes(searchQuery.toLowerCase());
@@ -158,14 +148,19 @@ function renderPublications() {
       <div class="pub-year">${p.year}</div>
       <div>
         <h3 class="pub-title">${p.title}</h3>
-        <p class="pub-meta">${p.authors} · <em>${p.venue}</em></p>
+        <!-- Notice below: removed the <em> tags from around ${p.venue} -->
+        <p class="pub-meta">${p.authors} · ${p.venue}</p>
         <div class="pub-links">
           ${p.pdf ? `<a href="${p.pdf}" target="_blank" class="pub-badge">PDF ↗</a>` : ""}
           ${p.arxiv ? `<a href="${p.arxiv}" target="_blank" class="pub-badge">arXiv</a>` : ""}
           ${p.doi ? `<a href="${p.doi}" target="_blank" class="pub-badge">DOI</a>` : ""}
           ${p.bibtex ? `<button class="pub-badge cite-btn" data-idx="${idx}">Cite</button>` : ""}
         </div>
-        ${p.bibtex ? `<pre id="bib-${idx}" class="bibtex-box" hidden>${p.bibtex}</pre>` : ""}
+        ${p.bibtex ? `
+        <div id="bib-${idx}" class="bibtex-wrapper" hidden>
+          <button class="copy-btn" data-idx="${idx}">Copy</button>
+          <pre class="bibtex-box">${p.bibtex}</pre>
+        </div>` : ""}
       </div>
     </article>
   `).join("");
@@ -174,6 +169,16 @@ function renderPublications() {
     btn.addEventListener("click", () => {
       const box = document.getElementById(`bib-${btn.dataset.idx}`);
       box.hidden = !box.hidden;
+    });
+  });
+
+  pubListEl.querySelectorAll(".copy-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const pub = filtered[btn.dataset.idx];
+      navigator.clipboard.writeText(pub.bibtex).then(() => {
+        btn.textContent = "Copied!";
+        setTimeout(() => btn.textContent = "Copy", 2000);
+      });
     });
   });
 
