@@ -1,10 +1,10 @@
 // ============================================================================
 // 1. YOUR PUBLICATIONS DATABASE
-// Add your papers here! You can use standard LaTeX ($...$) in titles.
-// Put uploaded PDFs in your repository (e.g. "pdf/paper1.pdf").
+// Add a 'type' property to each entry (e.g., "Journal Article" or "Book Chapter")
 // ============================================================================
 const PUBLICATIONS = [
   {
+    type: "Journal Article", // <-- NEW LABEL
     year: 2026,
     title: "Boundedness of the Maximal Operator on Variable Lebesgue Spaces $L^{p(\\cdot)}(X)$ over Spaces of Homogeneous Type",
     authors: "Alina Shalukhina",
@@ -19,10 +19,11 @@ const PUBLICATIONS = [
 }`
   },
   {
+    type: "Book Chapter", // <-- NEW LABEL
     year: 2025,
     title: "Weighted Norm Inequalities for Singular Integrals in Variable Exponent Spaces $L^{p(\\cdot)}(\\Omega, w)$",
     authors: "Alina Shalukhina",
-    venue: "Journal of Mathematical Analysis (Sample Entry — Edit in script.js)",
+    venue: "Journal of Mathematical Analysis",
     pdf: "",
     arxiv: "https://arxiv.org/",
     doi: "https://doi.org/",
@@ -35,14 +36,14 @@ const PUBLICATIONS = [
 ];
 
 // ============================================================================
-// 2. INTERACTIVE ENGINE (Search, Year Pills, Sort, Cite Drawer, KaTeX)
+// 2. INTERACTIVE ENGINE (Search, Type Filters, Sort, Cite Drawer, KaTeX)
 // ============================================================================
-let activeYear = "All";
+let activeType = "All"; // Now filters by type instead of year
 let searchQuery = "";
 let sortOrder = "desc";
 
 const pubListEl = document.getElementById("pub-list");
-const yearFiltersEl = document.getElementById("year-filters");
+const filterContainerEl = document.getElementById("year-filters"); 
 const searchInput = document.getElementById("pub-search");
 const sortSelect = document.getElementById("pub-sort");
 const pubCountEl = document.getElementById("pub-count");
@@ -59,18 +60,20 @@ function renderMath(element) {
   }
 }
 
-function renderYearPills() {
-  const years = ["All", ...new Set(PUBLICATIONS.map(p => p.year))].sort((a, b) => b - a);
-  yearFiltersEl.innerHTML = years.map(y => `
-    <button class="year-pill ${String(activeYear) === String(y) ? 'active' : ''}" data-year="${y}">
-      ${y === "All" ? "All years" : y}
+function renderFilters() {
+  // Automatically generate buttons based on the types in your database
+  const types = ["All", ...new Set(PUBLICATIONS.map(p => p.type))].filter(Boolean);
+  
+  filterContainerEl.innerHTML = types.map(t => `
+    <button class="year-pill ${activeType === t ? 'active' : ''}" data-type="${t}">
+      ${t === "All" ? "All publications" : t}
     </button>
   `).join("");
 
-  yearFiltersEl.querySelectorAll(".year-pill").forEach(btn => {
+  filterContainerEl.querySelectorAll(".year-pill").forEach(btn => {
     btn.addEventListener("click", () => {
-      activeYear = btn.dataset.year;
-      renderYearPills();
+      activeType = btn.dataset.type;
+      renderFilters();
       renderPublications();
     });
   });
@@ -78,7 +81,7 @@ function renderYearPills() {
 
 function renderPublications() {
   const filtered = PUBLICATIONS
-    .filter(p => activeYear === "All" || String(p.year) === String(activeYear))
+    .filter(p => activeType === "All" || p.type === activeType) // Filter by the new type
     .filter(p => {
       const text = `${p.title} ${p.authors} ${p.venue} ${p.year}`.toLowerCase();
       return text.includes(searchQuery.toLowerCase());
@@ -130,7 +133,7 @@ sortSelect.addEventListener("change", e => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  renderYearPills();
+  renderFilters();
   renderPublications();
   renderMath(document.body);
 });
