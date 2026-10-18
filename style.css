@@ -10,6 +10,7 @@
 
   --font-serif: "freight-text-pro", Georgia, serif;
   --font-sans: "proxima-nova", -apple-system, sans-serif;
+  --font-accent: "cofo-cinema1909", serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
