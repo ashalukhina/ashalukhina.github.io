@@ -79,8 +79,8 @@ body {
 
 /* Typography & Layout */
 h1, h2, h3 {
-  font-family: var(--font-serif);
-  font-weight: 400;
+  font-family: var(--font-sans); /* This switches it to Proxima Nova */
+  font-weight: 600; /* Makes it bolder and more structural */
   line-height: 1.12;
   letter-spacing: -0.015em;
 }
