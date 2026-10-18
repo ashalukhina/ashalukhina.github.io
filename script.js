@@ -129,14 +129,6 @@ sortSelect.addEventListener("change", e => {
   renderPublications();
 });
 
-// Theme Toggle (Light Editorial <-> Sleek Dark Mode)
-const themeBtn = document.getElementById("theme-toggle");
-themeBtn.addEventListener("click", () => {
-  const html = document.documentElement;
-  const next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  html.setAttribute("data-theme", next);
-});
-
 window.addEventListener("DOMContentLoaded", () => {
   renderYearPills();
   renderPublications();
