@@ -356,3 +356,24 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   color: var(--text);
   background: rgba(0, 0, 0, 0.05); /* Very subtle grey square on hover */
 }
+
+/* Editorial Grouping Lines */
+.pub-item {
+  border-bottom: none !important; /* Switch to top-borders for easier grouping */
+  border-top: 1px solid var(--border);
+}
+.pub-item:first-child {
+  border-top: none; /* No line above the very first item */
+}
+
+/* When the year is repeated, erase the full-width line */
+.pub-item.same-year {
+  border-top: none !important;
+}
+
+/* Redraw the line ONLY over the right-side content */
+.pub-item.same-year .pub-content {
+  border-top: 1px solid var(--border);
+  margin-top: -2rem; /* Pulls the border up into the gap */
+  padding-top: 2rem; /* Pushes the text back down so it stays aligned */
+}
