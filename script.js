@@ -2,35 +2,93 @@
 // 1. YOUR PUBLICATIONS DATABASE
 // Add a 'type' property to each entry (e.g., "Journal Article" or "Book Chapter")
 // ============================================================================
+// ============================================================================
+// 1. YOUR PUBLICATIONS DATABASE
+// Add a 'type' property to each entry (e.g., "Journal Article" or "Book Chapter")
+// ============================================================================
+// ============================================================================
+// 1. YOUR PUBLICATIONS DATABASE
+// Add a 'type' property to each entry (e.g., "Journal Article" or "Book Chapter")
+// ============================================================================
 const PUBLICATIONS = [
   {
-    type: "Journal Article", // <-- NEW LABEL
+    type: "Journal Article",
     year: 2026,
-    title: "Boundedness of the Maximal Operator on Variable Lebesgue Spaces $L^{p(\\cdot)}(X)$ over Spaces of Homogeneous Type",
-    authors: "Alina Shalukhina",
-    venue: "Preprint / Doctoral Thesis Research",
-    pdf: "pdf/maximal-operator.pdf",
-    arxiv: "https://arxiv.org/",
-    doi: "",
-    bibtex: `@misc{shalukhina2026maximal,
-  author = {Shalukhina, Alina},
-  title = {Boundedness of the Maximal Operator on Variable Lebesgue Spaces over Spaces of Homogeneous Type},
-  year = {2026}
+    title: "The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good",
+    authors: "A. Shalukhina",
+    venue: "Analysis and Mathematical Physics 16.3, Paper no. 63",
+    pdf: "",
+    arxiv: "",
+    doi: "https://doi.org/10.1007/s13324-026-01215-5",
+    bibtex: `@article{shalukhina2026maximal,
+  author = {Shalukhina, A.},
+  title = {The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good},
+  journal = {Analysis and Mathematical Physics},
+  volume = {16},
+  number = {3},
+  year = {2026},
+  note = {Paper no. 63},
+  doi = {10.1007/s13324-026-01215-5}
 }`
   },
   {
-    type: "Book Chapter", // <-- NEW LABEL
+    type: "Journal Article",
     year: 2025,
-    title: "Weighted Norm Inequalities for Singular Integrals in Variable Exponent Spaces $L^{p(\\cdot)}(\\Omega, w)$",
-    authors: "Alina Shalukhina",
-    venue: "Journal of Mathematical Analysis",
+    title: "Self-improving boundedness of the maximal operator on quasi-Banach lattices over spaces of homogeneous type",
+    authors: "A. Shalukhina",
+    venue: "Journal of Mathematical Analysis and Applications 548.2, Paper no. 129419",
     pdf: "",
-    arxiv: "https://arxiv.org/",
-    doi: "https://doi.org/",
-    bibtex: `@article{shalukhina2025weighted,
-  author = {Shalukhina, Alina},
-  title = {Weighted Norm Inequalities for Singular Integrals in Variable Exponent Spaces},
-  year = {2025}
+    arxiv: "",
+    doi: "https://doi.org/10.1016/j.jmaa.2025.129419",
+    bibtex: `@article{shalukhina2025selfimproving,
+  author = {Shalukhina, A.},
+  title = {Self-improving boundedness of the maximal operator on quasi-Banach lattices over spaces of homogeneous type},
+  journal = {Journal of Mathematical Analysis and Applications},
+  volume = {548},
+  number = {2},
+  year = {2025},
+  note = {Paper no. 129419},
+  doi = {10.1016/j.jmaa.2025.129419}
+}`
+  },
+  {
+    type: "Journal Article",
+    year: 2025,
+    title: "A necessary condition for the boundedness of the maximal operator on $L^{p(\\cdot)}$ over reverse doubling spaces of homogeneous type",
+    authors: "O. Karlovych and A. Shalukhina",
+    venue: "Analysis Mathematica 51.1, 241–248",
+    pdf: "",
+    arxiv: "",
+    doi: "https://doi.org/10.1007/s10476-024-00053-6",
+    bibtex: `@article{karlovych2025necessary,
+  author = {Karlovych, O. and Shalukhina, A.},
+  title = {A necessary condition for the boundedness of the maximal operator on $L^{p(\\cdot)}$ over reverse doubling spaces of homogeneous type},
+  journal = {Analysis Mathematica},
+  volume = {51},
+  number = {1},
+  pages = {241--248},
+  year = {2025},
+  doi = {10.1007/s10476-024-00053-6}
+}`
+  },
+  {
+    type: "Journal Article",
+    year: 2022,
+    title: "On the extension of the reverse Hölder inequality for power functions on the real axis",
+    authors: "A. Shalukhina",
+    venue: "Real Analysis Exchange 47.2, 425–434",
+    pdf: "",
+    arxiv: "",
+    doi: "https://doi.org/10.14321/realanalexch.47.2.1653382423",
+    bibtex: `@article{shalukhina2022extension,
+  author = {Shalukhina, A.},
+  title = {On the extension of the reverse H{\\"o}lder inequality for power functions on the real axis},
+  journal = {Real Analysis Exchange},
+  volume = {47},
+  number = {2},
+  pages = {425--434},
+  year = {2022},
+  doi = {10.14321/realanalexch.47.2.1653382423}
 }`
   }
 ];
