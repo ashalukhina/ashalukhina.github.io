@@ -1,13 +1,14 @@
 :root {
   --bg: #FFFFFF; /* Pure white background */
-  --surface: #F6F4EE; /* New Yorker-style beige for boxes */
-  --surface-subtle: #EAE6DF;
+  --surface: #FBEFE9; /* Warm, pale skin-like peachy beige */
+  --surface-subtle: #F2E3DB; /* Slightly deeper warm tone for hovers/buttons */
   --text: #111110;
   --text-muted: #66635B;
-  --border: #E2DDD5;
-  --accent: #E62B1E; /* Bright mailbox red */
-  --accent-soft: rgba(153, 0, 0, 0.08);
+  --border: #E5D3C8; /* Warmer border to match the new skin tones */
+  --accent: #E62B1E;
+  --accent-soft: rgba(230, 43, 30, 0.08);
 
+  /* Your Adobe Fonts */
   --font-serif: "freight-text-pro", Georgia, serif;
   --font-sans: "proxima-nova", -apple-system, sans-serif;
   --font-accent: "cofo-cinema1909", serif;
