@@ -20,7 +20,7 @@ const PUBLICATIONS = [
   NUMBER = {3},
   YEAR = {2026},
   PAGES = {Paper no. 63},
-  DOI = {10.1007/s13324-026-01215-5}
+  DOI = {10.1007/s13324-026-01215-5},
 }`
   },
   {
@@ -40,7 +40,7 @@ const PUBLICATIONS = [
   number = {2},
   year = {2025},
   note = {Paper no. 129419},
-  doi = {10.1016/j.jmaa.2025.129419}
+  doi = {10.1016/j.jmaa.2025.129419},
 }`
   },
   {
@@ -60,7 +60,7 @@ const PUBLICATIONS = [
   number = {1},
   pages = {241--248},
   year = {2025},
-  doi = {10.1007/s10476-024-00053-6}
+  doi = {10.1007/s10476-024-00053-6},
 }`
   },
   {
@@ -80,7 +80,7 @@ const PUBLICATIONS = [
   number = {2},
   pages = {425--434},
   year = {2022},
-  doi = {10.14321/realanalexch.47.2.1653382423}
+  doi = {10.14321/realanalexch.47.2.1653382423},
 }`
   }
 ];
