@@ -115,7 +115,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   text-align: justify;           /* Aligns both left and right edges evenly */
   hyphens: auto;                 /* Prevents wide gaps between long academic words */
   -webkit-hyphens: auto;         /* Safari/Mac support */
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .lead em {
   font-style: italic;
