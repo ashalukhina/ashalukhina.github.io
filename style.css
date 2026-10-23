@@ -108,9 +108,11 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   align-items: flex-start;
 }
 .lead {
-  font-size: 1.2rem;
-  color: var(--text);
-  margin-bottom: 2rem;
+  color: var(--text) !important; /* Forces the text to crisp black instead of gray */
+  max-width: 100%;               /* Lets the text reach the full width of the left column */
+  text-align: justify;           /* Aligns both left and right edges evenly */
+  hyphens: auto;                 /* Prevents wide gaps between long academic words */
+  -webkit-hyphens: auto;         /* Safari/Mac support */
 }
 .lead strong { color: var(--text); font-weight: 600; }
 .hero-actions { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
