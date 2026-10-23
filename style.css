@@ -11,7 +11,7 @@
   /* Your Adobe Fonts */
   --font-serif: "freight-text-pro", Georgia, serif;
   --font-sans: "proxima-nova", -apple-system, sans-serif;
-  --font-accent: "mostra-nuova", sans-serif; /* (Or whichever sans-serif you chose for the eyebrows) */
+  --font-accent: "mostra-nuova", sans-serif; /* Eyebrows */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -109,7 +109,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
 }
 .lead {
   font-size: 1.2rem;
-  color: var(--text-muted);
+  color: var(--text);
   margin-bottom: 2rem;
 }
 .lead strong { color: var(--text); font-weight: 600; }
