@@ -107,7 +107,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   padding: 6rem 0 5rem;
   border-bottom: 1px solid var(--border);
   align-items: flex-start;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 .lead {
   color: var(--text); 
@@ -115,7 +115,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   text-align: justify;           /* Aligns both left and right edges evenly */
   hyphens: auto;                 /* Prevents wide gaps between long academic words */
   -webkit-hyphens: auto;         /* Safari/Mac support */
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .lead em {
   font-style: italic;
