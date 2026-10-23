@@ -106,6 +106,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   padding: 6rem 0 5rem;
   border-bottom: 1px solid var(--border);
   align-items: flex-start;
+  padding-top: 2.5rem;
 }
 .lead {
   color: var(--text) !important; /* Forces the text to crisp black instead of gray */
@@ -113,6 +114,11 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   text-align: justify;           /* Aligns both left and right edges evenly */
   hyphens: auto;                 /* Prevents wide gaps between long academic words */
   -webkit-hyphens: auto;         /* Safari/Mac support */
+  margin-bottom: 2rem;
+}
+.lead em {
+  font-style: italic;
+  font-weight: 500;
 }
 .lead strong { color: var(--text); font-weight: 600; }
 .hero-actions { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
