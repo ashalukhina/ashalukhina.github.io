@@ -387,49 +387,58 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
 }
 
 /* =========================================
-   3-BOX HERO SUMMARY ROW
-   ========================================= */
-/* =========================================
-   FIXED HERO SECTION & PHOTO SIZING
+   SWISS GRID ALIGNMENT: HERO + 3 BOXES
    ========================================= */
 
-/* Ensure the hero is a proper two-column grid */
+/* 1. Top row: Left text takes remaining space (1fr), Right photo is exactly 360px */
 .hero {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 3rem;
+  grid-template-columns: 1fr 360px;
+  gap: 1.5rem;              /* Matches the gap of the 3 boxes below! */
   align-items: center;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.25rem;  /* Pulls the 3 boxes up closer to the picture */
   border-bottom: none;
 }
 
-/* Constrain the profile photo so it never blows up */
+/* Push the welcome text slightly away from the photo so it still breathes */
+.hero-content {
+  padding-right: 1.5rem;
+}
+
+/* Make the photo fill its 360px column edge-to-edge */
 .hero-photo img {
   width: 100%;
-  max-width: 360px;       /* Controls the maximum width of your photo */
+  max-width: 360px;
   height: auto;
-  border-radius: 12px;    /* Keeps those nice smooth rounded corners */
+  border-radius: 10px;      /* Matches the 10px border-radius of the cards */
   object-fit: cover;
-  margin: 0 auto;
   display: block;
 }
 
-/* 3-Box Row spanning the full width underneath */
+/* 2. Bottom row: Box 1 & 2 split the left space equally (1fr 1fr), Box 3 is 360px */
 .hero-boxes-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 360px; /* Box 3 has the EXACT width of the photo! */
   gap: 1.5rem;
   margin-top: 0;
   padding-bottom: 4rem;
-  border-bottom: 1px solid var(--border); /* Puts the dividing line BELOW the 3 boxes */
+  border-bottom: 1px solid var(--border);
   width: 100%;
 }
 
 .hero-boxes-grid .hero-card {
   margin-top: 0;
   height: 100%;
-  padding: 1.5rem;
+  padding: 1.4rem 1.5rem;
+}
+
+/* 3. Match text alignment inside the boxes to the welcome paragraph */
+.hero-boxes-grid .hero-card p,
+.hero-box-list li {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .hero-box-list {
@@ -447,6 +456,9 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
+  }
+  .hero-content {
+    padding-right: 0;
   }
   .hero-boxes-grid {
     grid-template-columns: 1fr;
