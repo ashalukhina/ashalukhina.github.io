@@ -401,6 +401,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   align-items: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  border-bottom: none;
 }
 
 /* Constrain the profile photo so it never blows up */
@@ -416,12 +417,12 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
 
 /* 3-Box Row spanning the full width underneath */
 .hero-boxes-grid {
-  grid-column: 1 / -1;    /* Spans across both columns */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  margin-top: 1rem;
-  margin-bottom: 4rem;
+  margin-top: 0;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--border); /* Puts the dividing line BELOW the 3 boxes */
   width: 100%;
 }
 
