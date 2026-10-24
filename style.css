@@ -469,8 +469,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
 /* Keep text inside the small boxes left-aligned */
 .hero-boxes-grid .hero-card p,
 .hero-box-list li {
-  /* text-align: left; */
-  text-wrap: balance;
+  text-align: left;
   hyphens: none;
 }
 
