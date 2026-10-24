@@ -510,10 +510,9 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   }
 }
 
-/* Make the grant link match the exact style of the profile links above */
 .box-link {
   font-family: var(--font-sans);
-  font-size: 0.95rem; /* Matches the text size in the box */
+  font-size: 0.85rem; /* Reduced to match inline card text */
   color: var(--text-muted);
   text-decoration: none;
   display: inline-block;
