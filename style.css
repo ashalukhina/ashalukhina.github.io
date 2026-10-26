@@ -523,3 +523,15 @@ h2 { font-size: clamp(2.2rem, 4vw, 2rem); margin-bottom: 1rem; }
   color: var(--accent);
   text-decoration: none;
 }
+
+.section-body p {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+/* Make all italics across the entire website use Medium Italic (weight 500) */
+em, i {
+  font-style: italic;
+  font-weight: 500 !important;
+}
