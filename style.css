@@ -578,3 +578,19 @@ em, i {
   margin-top: 0 !important;
   padding-top: 0.18rem !important; /* Fine-tunes the vertical height so the bottoms align */
 }
+
+/* Keep the publication column and BibTeX box strictly within the website width */
+.pub-content {
+  min-width: 0; /* Prevents <pre> tags from blowing out the 1fr CSS Grid column */
+}
+
+.bibtex-wrapper {
+  max-width: 100%;
+}
+
+.bibtex-box {
+  max-width: 100%;
+  white-space: pre-wrap !important; /* Wraps long BibTeX lines cleanly instead of stretching the box */
+  word-break: break-word;
+  padding-right: 2.5rem; /* Leaves room on the right so text never touches the copy icon */
+}
