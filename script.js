@@ -12,7 +12,7 @@ const PUBLICATIONS = [
     details: "16.3, Paper no. 63",
     doi: "https://doi.org/10.1007/s13324-026-01215-5",
     arxiv: "",
-    abstract: "We prove that the Hardy--Littlewood maximal operator $M$ is bounded on the variable Lebesgue space $L^{p(\cdot)}(X,d,\mu)$, with $1<p_-\le p_+<\infty$, over an unbounded space of homogeneous type $(X,d,\mu)$ with a Borel-semiregular measure $\mu$, if and only if the averaging operators $T_\mathcal{Q}$ are bounded on $L^{p(\cdot)}(X,d,\mu)$ uniformly over all families $\mathcal{Q}$ of pairwise disjoint ``cubes'' from a Hyt\"onen--Kairema dyadic system on $X$. This extends Diening's well-known characterization of the boundedness of $M$ on $L^{p(\cdot)}(\mathbb{R}^n)$ to the setting of spaces of homogeneous type, while also providing a slight refinement of the original result.",
+    abstract: String.raw`We prove that the Hardy--Littlewood maximal operator $M$ is bounded on the variable Lebesgue space $L^{p(\cdot)}(X,d,\mu)$, with $1<p_-\le p_+<\infty$, over an unbounded space of homogeneous type $(X,d,\mu)$ with a Borel-semiregular measure $\mu$, if and only if the averaging operators $T_\mathcal{Q}$ are bounded on $L^{p(\cdot)}(X,d,\mu)$ uniformly over all families $\mathcal{Q}$ of pairwise disjoint ``cubes'' from a Hyt\"onen--Kairema dyadic system on $X$. This extends Diening's well-known characterization of the boundedness of $M$ on $L^{p(\cdot)}(\mathbb{R}^n)$ to the setting of spaces of homogeneous type, while also providing a slight refinement of the original result.`,
     bibtex: `@article{AS26cubes,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good},
@@ -100,6 +100,14 @@ const PUBLICATIONS = [
 let activeType = "All";
 let searchQuery = "";
 let sortOrder = "desc";
+
+function formatAbstractHTML(str) {
+  if (!str) return "";
+  // Prevents "<" in math (like "$1 < p$") from being eaten as an HTML tag, while keeping <em> tags intact
+  return str
+    .replace(/<(?![\/]?em\b)/gi, "&lt;")
+    .replace(/--/g, "–"); // Also converts LaTeX "--" into a proper en-dash "–"!
+}
 
 function renderMath(element) {
   if (window.renderMathInElement && element) {
@@ -189,9 +197,9 @@ function renderPublications() {
           ${p.bibtex ? `<button class="pub-badge cite-btn" data-idx="${idx}">Cite</button>` : ""}
         </div>
         
-        ${hasAbstract ? `
+       ${hasAbstract ? `
         <div id="abs-${idx}" class="abstract-box" hidden>
-          ${p.abstract}
+          ${formatAbstractHTML(p.abstract)}
         </div>` : ""}
 
         ${p.bibtex ? `
@@ -209,13 +217,14 @@ function renderPublications() {
   `;
   }).join("");
 
-  // Toggle Abstract
+// Toggle Abstract
   pubListEl.querySelectorAll(".abstract-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const box = document.getElementById(`abs-${btn.dataset.idx}`);
       if (box) {
         box.hidden = !box.hidden;
         btn.classList.toggle("active");
+        if (!box.hidden) renderMath(box);
       }
     });
   });
