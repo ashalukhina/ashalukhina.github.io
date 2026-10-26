@@ -3,14 +3,15 @@
 // ============================================================================
 const PUBLICATIONS = [
   {
-    type: "Journal Article",
+    id: "AS26cubes",
+    type: "Journal article", // Use exactly: "Journal article", "Book chapter", or "Preprint"
     year: 2026,
     title: "The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good",
     authors: "A. Shalukhina",
-    venue: "<em>Analysis and Mathematical Physics</em> 16.3, Paper no. 63",
-    pdf: "#", // <-- Added placeholder so PDF button appears first!
-    arxiv: "",
+    journal: "<em>Analysis and Mathematical Physics</em>",
+    details: "16.3, Paper no. 63",
     doi: "https://doi.org/10.1007/s13324-026-01215-5",
+    abstract: "Let $(X, d, \\mu)$ be a space of homogeneous type... (Paste your abstract here, LaTeX works!)",
     bibtex: `@article{AS26cubes,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good},
@@ -24,23 +25,25 @@ const PUBLICATIONS = [
 }`
   },
   {
-    type: "Journal Article",
+    id: "AS25improve",
+    type: "Journal article",
     year: 2025,
     title: "Self-improving boundedness of the maximal operator on quasi-Banach lattices over spaces of homogeneous type",
     authors: "A. Shalukhina",
-    venue: "<em>Journal of Mathematical Analysis and Applications</em> 548.2, Paper no. 129419",
-    pdf: "#", // Replace "#" with your actual PDF file paths later
-    arxiv: "",
+    journal: "<em>Journal of Mathematical Analysis and Applications</em>",
+    details: "548.2, Paper no. 129419",
     doi: "https://doi.org/10.1016/j.jmaa.2025.129419",
-    bibtex: `@article{shalukhina2025selfimproving,
-  author = {Shalukhina, A.},
-  title = {Self-improving boundedness of the maximal operator on quasi-Banach lattices over spaces of homogeneous type},
-  journal = {Journal of Mathematical Analysis and Applications},
-  volume = {548},
-  number = {2},
-  year = {2025},
-  note = {Paper no. 129419},
-  doi = {10.1016/j.jmaa.2025.129419},
+    abstract: " ",
+    bibtex: `@article{AS25improve,
+  AUTHOR = {Shalukhina, Alina},
+  TITLE = {Self-improving boundedness of the maximal operator on quasi-Banach lattices over spaces of homogeneous type},
+  JOURNAL = {J. Math. Anal. Appl.}, 
+  FJOURNAL = {Journal of Mathematical Analysis and Applications},
+  VOLUME = {548},
+  NUMBER = {2},
+  YEAR = {2025},
+  PAGES = {Paper no. 129419},
+  DOI = {10.1016/j.jmaa.2025.129419},
 }`
   },
   {
