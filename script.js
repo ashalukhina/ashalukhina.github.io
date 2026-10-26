@@ -12,7 +12,7 @@ const PUBLICATIONS = [
     details: "16.3, Paper no. 63",
     doi: "https://doi.org/10.1007/s13324-026-01215-5",
     arxiv: "",
-    abstract: "Let $(X, d, \\mu)$ be a space of homogeneous type. We prove that the Hardy-Littlewood maximal operator is bounded on the variable Lebesgue space $L^{p(\\cdot)}(X)$ if and only if it is bounded on the corresponding adjacent dyadic maximal operator. We also introduce a new dyadic grid construction that maintains the fundamental geometric properties of the space.",
+    abstract: "Let $(X, d, \\mu)$ be a space of homogeneous type. We prove that the Hardy–Littlewood maximal operator is bounded on the variable Lebesgue space $L^{p(\\cdot)}(X)$ if and only if it is bounded on the corresponding adjacent dyadic maximal operator. We also introduce a new dyadic grid construction that maintains the fundamental geometric properties of the space.",
     bibtex: `@article{AS26cubes,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good},
@@ -35,7 +35,7 @@ const PUBLICATIONS = [
     details: "548.2, Paper no. 129419",
     doi: "https://doi.org/10.1016/j.jmaa.2025.129419",
     arxiv: "",
-    abstract: "We establish a self-improving property for the boundedness of the Hardy-Littlewood maximal operator on quasi-Banach lattices over spaces of homogeneous type. Our approach avoids the use of the Muckenhoupt $A_p$ condition, relying instead on structural properties of the lattice and the underlying geometry.",
+    abstract: "We establish a self-improving property for the boundedness of the Hardy–Littlewood maximal operator on quasi-Banach lattices over spaces of homogeneous type. Our approach avoids the use of the Muckenhoupt $A_p$ condition, relying instead on structural properties of the lattice and the underlying geometry.",
     bibtex: `@article{AS25improve,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {Self-improving boundedness of the maximal operator on quasi-Banach lattices over spaces of homogeneous type},
@@ -58,7 +58,7 @@ const PUBLICATIONS = [
     details: "51.1, 241–248",
     doi: "https://doi.org/10.1007/s10476-024-00053-6",
     arxiv: "",
-    abstract: "In this paper, we find a necessary condition for the boundedness of the Hardy-Littlewood maximal operator on variable Lebesgue spaces $L^{p(\\cdot)}(X)$ over spaces of homogeneous type $(X,d,\\mu)$ satisfying the reverse doubling condition.",
+    abstract: "In this paper, we find a necessary condition for the boundedness of the Hardy–Littlewood maximal operator on variable Lebesgue spaces $L^{p(\\cdot)}(X)$ over spaces of homogeneous type $(X,d,\\mu)$ satisfying the reverse doubling condition.",
     bibtex: `@article{karlovych2025necessary,
   author = {Karlovych, O. and Shalukhina, A.},
   title = {A necessary condition for the boundedness of the maximal operator on $L^{p(\\cdot)}$ over reverse doubling spaces of homogeneous type},
@@ -101,14 +101,8 @@ let activeType = "All";
 let searchQuery = "";
 let sortOrder = "desc";
 
-const pubListEl = document.getElementById("pub-list");
-const filterContainerEl = document.getElementById("year-filters"); 
-const searchInput = document.getElementById("pub-search");
-const sortSelect = document.getElementById("pub-sort");
-const pubCountEl = document.getElementById("pub-count");
-
 function renderMath(element) {
-  if (window.renderMathInElement) {
+  if (window.renderMathInElement && element) {
     window.renderMathInElement(element, {
       delimiters: [
         { left: "$$", right: "$$", display: true },
@@ -120,6 +114,9 @@ function renderMath(element) {
 }
 
 function renderFilters() {
+  const filterContainerEl = document.getElementById("year-filters");
+  if (!filterContainerEl) return;
+
   const categoryMap = {
     "All": "All publications",
     "Journal article": "Journal articles",
@@ -143,15 +140,21 @@ function renderFilters() {
 }
 
 function renderPublications() {
+  const pubListEl = document.getElementById("pub-list");
+  const pubCountEl = document.getElementById("pub-count");
+  if (!pubListEl) return;
+
   const filtered = PUBLICATIONS
     .filter(p => activeType === "All" || p.type === activeType)
     .filter(p => {
-      const text = `${p.title} ${p.authors} ${p.journal} ${p.details || ''} ${p.year}`.toLowerCase();
+      const text = `${p.title} ${p.authors} ${p.journal || p.venue || ''} ${p.details || ''} ${p.year}`.toLowerCase();
       return text.includes(searchQuery.toLowerCase());
     })
     .sort((a, b) => sortOrder === "desc" ? b.year - a.year : a.year - b.year);
 
-  pubCountEl.textContent = `${filtered.length} publication${filtered.length === 1 ? "" : "s"}`;
+  if (pubCountEl) {
+    pubCountEl.textContent = `${filtered.length} publication${filtered.length === 1 ? "" : "s"}`;
+  }
 
   if (filtered.length === 0) {
     pubListEl.innerHTML = `<p style="padding: 2rem 0; color: var(--text-muted);">No publications match the current filter.</p>`;
@@ -164,11 +167,13 @@ function renderPublications() {
     const isFirstOfYear = p.year !== currentYear;
     currentYear = p.year;
 
-    // Build the meta string with dynamic separators
-    let metaText = `${p.authors} &middot; ${p.journal}`;
+    const journalText = p.journal || p.venue || "";
+    let metaText = `${p.authors} &middot; ${journalText}`;
     if (p.details) {
       metaText += ` &middot; ${p.details}`;
     }
+
+    const hasAbstract = p.abstract && p.abstract.trim() !== "";
 
     return `
     <article class="pub-item ${isFirstOfYear ? 'new-year' : 'same-year'}">
@@ -178,4 +183,99 @@ function renderPublications() {
         <h3 class="pub-title">${p.title}</h3>
         <p class="pub-meta">${metaText}</p>
         <div class="pub-links">
-          ${p.abstract && p.abstract.trim() !== "" ? `<button class="pub-badge
+          ${hasAbstract ? `<button class="pub-badge abstract-btn" data-idx="${idx}">Abstract</button>` : ""}
+          ${p.doi ? `<a href="${p.doi}" target="_blank" class="pub-badge">DOI ↗</a>` : ""}
+          ${p.arxiv ? `<a href="${p.arxiv}" target="_blank" class="pub-badge">arXiv ↗</a>` : ""}
+          ${p.bibtex ? `<button class="pub-badge cite-btn" data-idx="${idx}">Cite</button>` : ""}
+        </div>
+        
+        ${hasAbstract ? `
+        <div id="abs-${idx}" class="abstract-box" hidden>
+          ${p.abstract}
+        </div>` : ""}
+
+        ${p.bibtex ? `
+        <div id="bib-${idx}" class="bibtex-wrapper" hidden>
+          <button class="copy-btn" data-idx="${idx}" title="Copy to clipboard">
+            <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+          <pre class="bibtex-box">${p.bibtex}</pre>
+        </div>` : ""}
+      </div>
+    </article>
+  `;
+  }).join("");
+
+  // Toggle Abstract
+  pubListEl.querySelectorAll(".abstract-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const box = document.getElementById(`abs-${btn.dataset.idx}`);
+      if (box) {
+        box.hidden = !box.hidden;
+        btn.classList.toggle("active");
+      }
+    });
+  });
+
+  // Toggle BibTeX
+  pubListEl.querySelectorAll(".cite-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const box = document.getElementById(`bib-${btn.dataset.idx}`);
+      if (box) {
+        box.hidden = !box.hidden;
+        btn.classList.toggle("active");
+      }
+    });
+  });
+
+  // Copy BibTeX
+  pubListEl.querySelectorAll(".copy-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const pub = filtered[btn.dataset.idx];
+      navigator.clipboard.writeText(pub.bibtex).then(() => {
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = `<svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+        btn.style.color = "var(--accent)";
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.style.color = "";
+        }, 2000);
+      });
+    });
+  });
+
+  renderMath(pubListEl);
+}
+
+function initApp() {
+  const searchInput = document.getElementById("pub-search");
+  const sortSelect = document.getElementById("pub-sort");
+
+  if (searchInput) {
+    searchInput.addEventListener("input", e => {
+      searchQuery = e.target.value;
+      renderPublications();
+    });
+  }
+
+  if (sortSelect) {
+    sortSelect.addEventListener("change", e => {
+      sortOrder = e.target.value;
+      renderPublications();
+    });
+  }
+
+  renderFilters();
+  renderPublications();
+  renderMath(document.body);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initApp);
+} else {
+  initApp();
+}
+window.addEventListener("load", () => renderMath(document.body));
