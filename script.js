@@ -168,9 +168,9 @@ function renderPublications() {
     currentYear = p.year;
 
     const journalText = p.journal || p.venue || "";
-    let metaText = `${p.authors} &middot; ${journalText}`;
+    let metaText = `${p.authors}&ensp;&middot;&ensp;${journalText}`;
     if (p.details) {
-      metaText += ` &middot; ${p.details}`;
+      metaText += `&ensp;&middot;&ensp;${p.details}`;
     }
 
     const hasAbstract = p.abstract && p.abstract.trim() !== "";
