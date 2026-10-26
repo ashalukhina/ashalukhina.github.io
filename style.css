@@ -552,3 +552,29 @@ em, i {
   border-color: var(--accent);
   color: var(--accent);
 }
+
+/* 1. Remove the "Newest first" sort dropdown */
+#pub-sort,
+.pub-sort {
+  display: none !important;
+}
+
+/* 2. Make the text on the beige category buttons crisp black instead of gray */
+.year-pill {
+  color: var(--text);
+}
+
+/* 3. Make the Cite button solid black like the "Publications" button in the hero */
+.pub-badge.cite-btn {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
+  transition: opacity 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.pub-badge.cite-btn:hover,
+.pub-badge.cite-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #FFFFFF;
+}
