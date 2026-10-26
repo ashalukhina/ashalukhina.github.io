@@ -538,7 +538,6 @@ em, i {
 
 /* Abstract Dropdown Styling */
 .abstract-box {
-  display: none; /* Hidden by default */
   margin-top: 1rem;
   padding: 1rem 1.25rem;
   background: var(--surface-subtle);
@@ -549,10 +548,7 @@ em, i {
   text-align: justify;
 }
 
-.abstract-box.active, 
-.bibtex-box.active {
-  display: block; /* Shows when clicked */
+.pub-badge.active {
+  border-color: var(--accent);
+  color: var(--accent);
 }
-
-/* Hide bibtex by default too if it isn't already */
-.bibtex-box { display: none; }
