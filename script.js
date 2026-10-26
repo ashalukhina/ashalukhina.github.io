@@ -182,10 +182,10 @@ function renderPublications() {
       <div class="pub-content">
         <h3 class="pub-title">${p.title}</h3>
         <p class="pub-meta">${metaText}</p>
-        <div class="pub-links">
-          ${hasAbstract ? `<button class="pub-badge abstract-btn" data-idx="${idx}">Abstract</button>` : ""}
+      <div class="pub-links">
           ${p.doi ? `<a href="${p.doi}" target="_blank" class="pub-badge">DOI ↗</a>` : ""}
           ${p.arxiv ? `<a href="${p.arxiv}" target="_blank" class="pub-badge">arXiv ↗</a>` : ""}
+          ${hasAbstract ? `<button class="pub-badge abstract-btn" data-idx="${idx}">Abstract</button>` : ""}
           ${p.bibtex ? `<button class="pub-badge cite-btn" data-idx="${idx}">Cite</button>` : ""}
         </div>
         
