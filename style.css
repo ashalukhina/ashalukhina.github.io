@@ -535,3 +535,24 @@ em, i {
   font-style: italic;
   font-weight: 500 !important;
 }
+
+/* Abstract Dropdown Styling */
+.abstract-box {
+  display: none; /* Hidden by default */
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--surface-subtle);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: justify;
+}
+
+.abstract-box.active, 
+.bibtex-box.active {
+  display: block; /* Shows when clicked */
+}
+
+/* Hide bibtex by default too if it isn't already */
+.bibtex-box { display: none; }
