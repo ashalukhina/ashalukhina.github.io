@@ -12,7 +12,7 @@ const PUBLICATIONS = [
     details: "16.3, Paper no. 63",
     doi: "https://doi.org/10.1007/s13324-026-01215-5",
     arxiv: "",
-    abstract: String.raw`We prove that the Hardy--Littlewood maximal operator $M$ is bounded on the variable Lebesgue space $L^{p(\cdot)}(X,d,\mu)$, with $1<p_-\le p_+<\infty$, over an unbounded space of homogeneous type $(X,d,\mu)$ with a Borel-semiregular measure $\mu$, if and only if the averaging operators $T_\mathcal{Q}$ are bounded on $L^{p(\cdot)}(X,d,\mu)$ uniformly over all families $\mathcal{Q}$ of pairwise disjoint ``cubes'' from a Hyt\"onen--Kairema dyadic system on $X$. This extends Diening's well-known characterization of the boundedness of $M$ on $L^{p(\cdot)}(\mathbb{R}^n)$ to the setting of spaces of homogeneous type, while also providing a slight refinement of the original result.`,
+    abstract: String.raw`We prove that the Hardy--Littlewood maximal operator $M$ is bounded on the variable Lebesgue space $L^{p(\cdot)}(X,d,\mu)$, with $1<p_-\le p_+<\infty$, over an unbounded space of homogeneous type $(X,d,\mu)$ with a Borel-semiregular measure $\mu$, if and only if the averaging operators $T_\mathcal{Q}$ are bounded on $L^{p(\cdot)}(X,d,\mu)$ uniformly over all families $\mathcal{Q}$ of pairwise disjoint “cubes” from a Hytönen--Kairema dyadic system on $X$. This extends Diening's well-known characterization of the boundedness of $M$ on $L^{p(\cdot)}(\mathbb{R}^n)$ to the setting of spaces of homogeneous type, while also providing a slight refinement of the original result.`,
     bibtex: `@article{AS26cubes,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good},
@@ -35,7 +35,7 @@ const PUBLICATIONS = [
     details: "548.2, Paper no. 129419",
     doi: "https://doi.org/10.1016/j.jmaa.2025.129419",
     arxiv: "",
-    abstract: "We establish a self-improving property for the boundedness of the Hardy–Littlewood maximal operator on quasi-Banach lattices over spaces of homogeneous type. Our approach avoids the use of the Muckenhoupt $A_p$ condition, relying instead on structural properties of the lattice and the underlying geometry.",
+    abstract: String.raw`We establish a self-improving property for the boundedness of the Hardy--Littlewood maximal operator on quasi-Banach lattices over spaces of homogeneous type. Our approach avoids the use of the Muckenhoupt $A_p$ condition, relying instead on structural properties of the lattice and the underlying geometry.`,
     bibtex: `@article{AS25improve,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {Self-improving boundedness of the maximal operator on quasi-Banach lattices over spaces of homogeneous type},
@@ -58,7 +58,7 @@ const PUBLICATIONS = [
     details: "51.1, 241–248",
     doi: "https://doi.org/10.1007/s10476-024-00053-6",
     arxiv: "",
-    abstract: "In this paper, we find a necessary condition for the boundedness of the Hardy–Littlewood maximal operator on variable Lebesgue spaces $L^{p(\\cdot)}(X)$ over spaces of homogeneous type $(X,d,\\mu)$ satisfying the reverse doubling condition.",
+    abstract: String.raw`In this paper, we find a necessary condition for the boundedness of the Hardy--Littlewood maximal operator on variable Lebesgue spaces $L^{p(\cdot)}(X)$ over spaces of homogeneous type $(X,d,\mu)$ satisfying the reverse doubling condition.`,
     bibtex: `@article{karlovych2025necessary,
   author = {Karlovych, O. and Shalukhina, A.},
   title = {A necessary condition for the boundedness of the maximal operator on $L^{p(\\cdot)}$ over reverse doubling spaces of homogeneous type},
@@ -80,7 +80,7 @@ const PUBLICATIONS = [
     details: "47.2, 425–434",
     doi: "https://doi.org/10.14321/realanalexch.47.2.1653382423",
     arxiv: "",
-    abstract: "We consider the reverse Hölder inequality for power weights on the real line and obtain the exact bounds for the parameters where the inequality holds. The proof heavily relies on a fine analysis of the corresponding Muckenhoupt conditions.",
+    abstract: String.raw`We consider the reverse Hölder inequality for power weights on the real line and obtain the exact bounds for the parameters where the inequality holds. The proof heavily relies on a fine analysis of the corresponding Muckenhoupt conditions.`,
     bibtex: `@article{shalukhina2022extension,
   author = {Shalukhina, A.},
   title = {On the extension of the reverse H{\\"o}lder inequality for power functions on the real axis},
@@ -106,7 +106,10 @@ function formatAbstractHTML(str) {
   // Prevents "<" in math (like "$1 < p$") from being eaten as an HTML tag, while keeping <em> tags intact
   return str
     .replace(/<(?![\/]?em\b)/gi, "&lt;")
-    .replace(/--/g, "–"); // Also converts LaTeX "--" into a proper en-dash "–"!
+    .replace(/---/g, "—")
+    .replace(/--/g, "–")
+    .replace(/''/g, "”")
+    .replace(/\\"{o}|\\"o/g, "ö");
 }
 
 function renderMath(element) {
@@ -190,14 +193,14 @@ function renderPublications() {
       <div class="pub-content">
         <h3 class="pub-title">${p.title}</h3>
         <p class="pub-meta">${metaText}</p>
-      <div class="pub-links">
+        <div class="pub-links">
           ${p.doi ? `<a href="${p.doi}" target="_blank" class="pub-badge">DOI ↗</a>` : ""}
           ${p.arxiv ? `<a href="${p.arxiv}" target="_blank" class="pub-badge">arXiv ↗</a>` : ""}
           ${hasAbstract ? `<button class="pub-badge abstract-btn" data-idx="${idx}">Abstract</button>` : ""}
           ${p.bibtex ? `<button class="pub-badge cite-btn" data-idx="${idx}">Cite</button>` : ""}
         </div>
         
-       ${hasAbstract ? `
+        ${hasAbstract ? `
         <div id="abs-${idx}" class="abstract-box" hidden>
           ${formatAbstractHTML(p.abstract)}
         </div>` : ""}
@@ -217,7 +220,7 @@ function renderPublications() {
   `;
   }).join("");
 
-// Toggle Abstract
+  // Toggle Abstract
   pubListEl.querySelectorAll(".abstract-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const box = document.getElementById(`abs-${btn.dataset.idx}`);
