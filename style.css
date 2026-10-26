@@ -564,17 +564,17 @@ em, i {
   color: var(--text);
 }
 
-/* 3. Make the Cite button solid black like the "Publications" button in the hero */
-.pub-badge.cite-btn {
-  background: var(--text);
-  border-color: var(--text);
-  color: var(--bg);
-  transition: opacity 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+/* 1. Reset the year font to normal spacing and align its baseline with the first line of the title */
+.pub-item {
+  align-items: baseline; /* Locks the bottom of the year to the baseline of the title's first line */
 }
 
-.pub-badge.cite-btn:hover,
-.pub-badge.cite-btn.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #FFFFFF;
+.pub-year {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: normal; /* Removes the wide 0.15em spacing */
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 1.2;
 }
