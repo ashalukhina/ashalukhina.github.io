@@ -12,7 +12,7 @@ const PUBLICATIONS = [
     details: "16.3, Paper no. 63",
     doi: "https://doi.org/10.1007/s13324-026-01215-5",
     arxiv: "",
-    abstract: "Let $(X, d, \\mu)$ be a space of homogeneous type. We prove that the Hardy–Littlewood maximal operator is bounded on the variable Lebesgue space $L^{p(\\cdot)}(X)$ if and only if it is bounded on the corresponding adjacent dyadic maximal operator. We also introduce a new dyadic grid construction that maintains the fundamental geometric properties of the space.",
+    abstract: "We prove that the Hardy--Littlewood maximal operator $M$ is bounded on the variable Lebesgue space $L^{p(\cdot)}(X,d,\mu)$, with $1<p_-\le p_+<\infty$, over an unbounded space of homogeneous type $(X,d,\mu)$ with a Borel-semiregular measure $\mu$, if and only if the averaging operators $T_\mathcal{Q}$ are bounded on $L^{p(\cdot)}(X,d,\mu)$ uniformly over all families $\mathcal{Q}$ of pairwise disjoint ``cubes'' from a Hyt\"onen--Kairema dyadic system on $X$. This extends Diening's well-known characterization of the boundedness of $M$ on $L^{p(\cdot)}(\mathbb{R}^n)$ to the setting of spaces of homogeneous type, while also providing a slight refinement of the original result.",
     bibtex: `@article{AS26cubes,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good},
