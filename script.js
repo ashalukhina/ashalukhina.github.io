@@ -176,11 +176,16 @@ const PUBLICATIONS = [
     year: 2026,
     title: "On interpolation of variable Lebesgue spaces over spaces of homogeneous type",
     authors: "A. Shalukhina",
-    journal: "<em>Tbilisi Analysis and PDE Seminar</em> (Trends in Mathematics 20), Birkhäuser, Cham",
+    journal: "<em>Tbilisi Analysis and PDE Seminar</em> (Trends in Mathematics 20, Birkhäuser)",
     details: "To appear",
     doi: "https://link.springer.com/book/9783032218063",
-    arxiv: "",
-    abstract: String.raw``,
+    abstract: String.raw`We show that the Hardy--Littlewood maximal operator $M$ is bounded on a variable 
+                        Lebesgue space $L^{p(\cdot)}(X)$, $1<p_-\le p_+<\infty$, over a space of homogeneous type
+                        $X$ if and only if, for every $q\in(1,\infty)$, the exponent $p(\cdot)$ can be represented
+                        as $\frac1{p(x)}=\frac{\theta}{q}+\frac{1-\theta}{r(x)}$, $x\in X$, so that $M$ is bounded
+                        on $L^{r(\cdot)}(X)$ for all sufficiently small $\theta>0$. This is an extension of the 
+                        analogous result by Diening, Karlovych and Shargorodsky from the Euclidean spaces to spaces
+                        of homogeneous type.`,
     bibtex: String.raw`@incollection{AS26interp,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {On interpolation of variable {L}ebesgue spaces over spaces of homogeneous type},
@@ -188,7 +193,8 @@ const PUBLICATIONS = [
   EDITOR = {Duduchava, Roland and Shargorodsky, Eugene and Tephnadze, George},
   SERIES = {Trends in Mathematics},
   VOLUME = {20},
-  PUBLISHER = {Birkh{\"a}user, Cham},
+  PUBLISHER = {Birkh{\"a}user},
+  ADDRESS = {Cham},
   YEAR = {2026},
   NOTE = {To appear},
 }`
