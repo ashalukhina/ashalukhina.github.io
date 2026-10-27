@@ -11,14 +11,12 @@ const PUBLICATIONS = [
     journal: "<em>Georgian Mathematical Journal</em>",
     details: "Published online",
     doi: "https://doi.org/10.1515/gmj-2026-3048",
-    abstract: String.raw`We prove that the Hardy--Littlewood maximal operator $M$ is bounded on the variable 
-                      Lebesgue space $L^{p(\cdot)}(X,d,\mu)$, with $1<p_-\le p_+<\infty$, over an unbounded 
-                      space of homogeneous type $(X,d,\mu)$ with a Borel-semiregular measure $\mu$, if and 
-                      only if the averaging operators $T_\mathcal{Q}$ are bounded on $L^{p(\cdot)}(X,d,\mu)$ 
-                      uniformly over all families $\mathcal{Q}$ of pairwise disjoint “cubes” from a 
-                      Hytönen--Kairema dyadic system on $X$. This extends Diening's well-known characterization 
-                      of the boundedness of $M$ on $L^{p(\cdot)}(\mathbb{R}^n)$ to the setting of spaces of 
-                      homogeneous type, while also providing a slight refinement of the original result.`,
+    abstract: String.raw`We prove the local boundedness of the Hardy--Littlewood maximal operator on 
+                        variable Lebesgue spaces $L^{p(\cdot)}(X)$ over spaces of homogeneous type for 
+                        exponents $p(\cdot)$ which are bounded away from $1$ and $\infty$ and satisfy a 
+                        local Muckenhoupt condition $\mathcal{A}_{\textnormal{loc}}(X)$. 
+                        This generalizes a Euclidean theorem of A.~K.~Lerner. 
+                        Our proof utilizes the machinery of adjacent dyadic grids.`,
     bibtex: `@article{KST26,
   AUTHOR = {Kopaliani, Tengiz and Shalukhina, Alina and Tephnadze, George},
   TITLE = {Maximal operator on $L^{p(\cdot)}$ spaces over spaces of homogeneous type: {L}ocal boundedness},
@@ -39,8 +37,15 @@ const PUBLICATIONS = [
     details: "16.3, Paper no. 63",
     doi: "https://doi.org/10.1007/s13324-026-01215-5",
     arxiv: "",
-    abstract: String.raw`We prove that the Hardy--Littlewood maximal operator $M$ is bounded on the variable Lebesgue space $L^{p(\cdot)}(X,d,\mu)$, with $1<p_-\le p_+<\infty$, over an unbounded space of homogeneous type $(X,d,\mu)$ with a Borel-semiregular measure $\mu$, if and only if the averaging operators $T_\mathcal{Q}$ are bounded on $L^{p(\cdot)}(X,d,\mu)$ uniformly over all families $\mathcal{Q}$ of pairwise disjoint “cubes” from a Hytönen--Kairema dyadic system on $X$. This extends Diening's well-known characterization of the boundedness of $M$ on $L^{p(\cdot)}(\mathbb{R}^n)$ to the setting of spaces of homogeneous type, while also providing a slight refinement of the original result.`,
-    bibtex: `@article{AS26cubes,
+    abstract: String.raw`We prove that the Hardy--Littlewood maximal operator $M$ is bounded on the variable 
+                      Lebesgue space $L^{p(\cdot)}(X,d,\mu)$, with $1<p_-\le p_+<\infty$, over an unbounded 
+                      space of homogeneous type $(X,d,\mu)$ with a Borel-semiregular measure $\mu$, if and 
+                      only if the averaging operators $T_\mathcal{Q}$ are bounded on $L^{p(\cdot)}(X,d,\mu)$ 
+                      uniformly over all families $\mathcal{Q}$ of pairwise disjoint “cubes” from a 
+                      Hytönen--Kairema dyadic system on $X$. This extends Diening's well-known characterization 
+                      of the boundedness of $M$ on $L^{p(\cdot)}(\mathbb{R}^n)$ to the setting of spaces of 
+                      homogeneous type, while also providing a slight refinement of the original result.`,
+   bibtex: `@article{AS26cubes,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good},
   JOURNAL = {Anal. Math. Phys.},
