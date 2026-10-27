@@ -96,8 +96,12 @@ const PUBLICATIONS = [
     journal: "<em>Journal of Mathematical Analysis and Applications</em>",
     details: "548.2, Paper no. 129419",
     doi: "https://doi.org/10.1016/j.jmaa.2025.129419",
-    arxiv: "",
-    abstract: String.raw`We establish a self-improving property for the boundedness of the Hardy--Littlewood maximal operator on quasi-Banach lattices over spaces of homogeneous type. Our approach avoids the use of the Muckenhoupt $A_p$ condition, relying instead on structural properties of the lattice and the underlying geometry.`,
+    abstract: String.raw`We prove the self-improvement property of the Hardy--Littlewood maximal operator on quasi-Banach lattices with the 
+                        Fatou property in the setting of spaces of homogeneous type. Our result is a generalization of the boundedness criterion
+                        obtained in 2010 by Lerner and Ombrosi for maximal operators on quasi-Banach function spaces over Euclidean spaces. The
+                        specialty of the proof for spaces of homogeneous type lies in using adjacent grids of Hytönen--Kairema dyadic 
+                        cubes and studying the maximal operator alongside its “dyadic” version. Then we apply the obtained result to 
+                        variable Lebesgue spaces over spaces of homogeneous type.`,
     bibtex: `@article{AS25improve,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {Self-improving boundedness of the maximal operator on quasi-Banach lattices over spaces of homogeneous type},
