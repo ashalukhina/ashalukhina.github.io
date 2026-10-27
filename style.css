@@ -646,7 +646,7 @@ section[id] {
 
 /* 1. Make the outer header full-width screen background beige */
 .site-header {
-  background-color: #F7F5F0 !important; /* A warm, sophisticated editorial beige */
+  background-color: var(--bg-card, #f4f2ee) !important; /* A warm, sophisticated editorial beige */
   border-bottom: 1px solid var(--border);
 }
 
