@@ -11,7 +11,16 @@ const PUBLICATIONS = [
     journal: "<em>arXiv</em>",
     details: "Preprint",
     arxiv: "https://doi.org/10.48550/arXiv.2610.33792",
-    abstract: String.raw`We establish a self-improving property for the boundedness of the Hardy--Littlewood maximal operator on quasi-Banach lattices over spaces of homogeneous type. Our approach avoids the use of the Muckenhoupt $A_p$ condition, relying instead on structural properties of the lattice and the underlying geometry.`,
+    abstract: String.raw`We investigate the boundedness of the Hardy--Littlewood maximal operator $M$ on 
+                        variable Lebesgue spaces $L^{p(\cdot)}(\Omega,d,\mu)$ over spaces of homogeneous type, 
+                        focusing on the endpoints $p_-=1$ and $p_+=\infty$. At the lower endpoint, we prove that
+                        the boundedness of $M$ forces $p_->1$ for all exponents if and only if the
+                        space $(\Omega,d,\mu)$ is non-atomic. At the upper endpoint, we generalize
+                        the Muckenhoupt--Nekvinda sufficient condition of Adamadze, 
+                        Diening, and Kopaliani. On bounded spaces of homogeneous type, whenever $p_->1$, this 
+                        yields a boundedness criterion based on the Muckenhoupt condition alone.
+                        We also construct an unbounded space where the Muckenhoupt 
+                        condition suffices for the maximal operator's boundedness.`,
     bibtex: `@misc{AS26endpoints,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {The endpoints $p_-=1$ and $p_+=\infty$ for the maximal operator on $L^{p(\cdot)}$ over spaces of homogeneous type},
