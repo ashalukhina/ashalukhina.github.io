@@ -11,7 +11,14 @@ const PUBLICATIONS = [
     journal: "<em>Georgian Mathematical Journal</em>",
     details: "Published online",
     doi: "https://doi.org/10.1515/gmj-2026-3048",
-    abstract: String.raw`We prove that the Hardy--Littlewood maximal operator $M$ is bounded on the variable Lebesgue space $L^{p(\cdot)}(X,d,\mu)$, with $1<p_-\le p_+<\infty$, over an unbounded space of homogeneous type $(X,d,\mu)$ with a Borel-semiregular measure $\mu$, if and only if the averaging operators $T_\mathcal{Q}$ are bounded on $L^{p(\cdot)}(X,d,\mu)$ uniformly over all families $\mathcal{Q}$ of pairwise disjoint “cubes” from a Hytönen--Kairema dyadic system on $X$. This extends Diening's well-known characterization of the boundedness of $M$ on $L^{p(\cdot)}(\mathbb{R}^n)$ to the setting of spaces of homogeneous type, while also providing a slight refinement of the original result.`,
+    abstract: String.raw`We prove that the Hardy--Littlewood maximal operator $M$ is bounded on the variable 
+                      Lebesgue space $L^{p(\cdot)}(X,d,\mu)$, with $1<p_-\le p_+<\infty$, over an unbounded 
+                      space of homogeneous type $(X,d,\mu)$ with a Borel-semiregular measure $\mu$, if and 
+                      only if the averaging operators $T_\mathcal{Q}$ are bounded on $L^{p(\cdot)}(X,d,\mu)$ 
+                      uniformly over all families $\mathcal{Q}$ of pairwise disjoint “cubes” from a 
+                      Hytönen--Kairema dyadic system on $X$. This extends Diening's well-known characterization 
+                      of the boundedness of $M$ on $L^{p(\cdot)}(\mathbb{R}^n)$ to the setting of spaces of 
+                      homogeneous type, while also providing a slight refinement of the original result.`,
     bibtex: `@article{KST26,
   AUTHOR = {Kopaliani, Tengiz and Shalukhina, Alina and Tephnadze, George},
   TITLE = {Maximal operator on $L^{p(\cdot)}$ spaces over spaces of homogeneous type: {L}ocal boundedness},
@@ -75,13 +82,13 @@ const PUBLICATIONS = [
     title: "A necessary condition for the boundedness of the maximal operator on $L^{p(\\cdot)}$ over reverse doubling spaces of homogeneous type",
     authors: "O. Karlovych and A. Shalukhina",
     journal: "<em>Analysis Mathematica</em>",
-    details: "51.1, pp. 241–248",
+    details: "51.1, 241–248",
     doi: "https://doi.org/10.1007/s10476-024-00053-6",
     abstract: String.raw`Let $(X,d,\mu)$ be a space of homogeneous type and $p(\cdot):X\to[1,\infty]$
                         be a variable exponent. We show that if the measure $\mu$ is Borel-semiregular
                         and reverse doubling, then the condition 
                         $\operatornamewithlimits{ess\,inf}\limits_{x\in X}p(x)>1$ 
-                        is necessary for the boundedness of the Hardy-Littlewood maximal operator $M$ 
+                        is necessary for the boundedness of the Hardy--Littlewood maximal operator $M$ 
                         on the variable Lebesgue space $L^{p(\cdot)}(X,d,\mu)$.`,
     bibtex: `@article{SK25,
   AUTHOR = {Karlovych, Oleksiy and Shalukhina, Alina},
