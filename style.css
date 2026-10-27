@@ -48,7 +48,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 52px;
 }
 .brand {
   font-family: var(--font-sans);
@@ -609,7 +609,25 @@ em, i {
 }
 
 .brand-logo {
-  height: 28px; /* Adjust between 24px and 34px depending on how tightly you cropped the artboard */
+  height: 24px; /* Adjust between 22px and 26px to taste */
   width: auto;
   display: block;
+}
+
+/* 2. Make RESEARCH / PUBLICATIONS / CONTACT smaller and tighter */
+.site-nav {
+  display: flex;
+  gap: 1.75rem; /* Slightly tighter spacing between the 3 items */
+}
+
+.site-nav a {
+  font-size: 0.72rem !important; /* Smaller, crisp editorial size (~11.5px) */
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* 3. Offset anchor scrolling so the sticky 52px header never covers section titles */
+section[id] {
+  scroll-margin-top: 64px;
 }
