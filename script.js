@@ -69,25 +69,30 @@ const PUBLICATIONS = [
 }`
   },
   {
-    id: "karlovych2025necessary",
+    id: "SK25",
     type: "Journal article",
     year: 2025,
     title: "A necessary condition for the boundedness of the maximal operator on $L^{p(\\cdot)}$ over reverse doubling spaces of homogeneous type",
     authors: "O. Karlovych and A. Shalukhina",
     journal: "<em>Analysis Mathematica</em>",
-    details: "51.1, 241–248",
+    details: "51.1, pp. 241–248",
     doi: "https://doi.org/10.1007/s10476-024-00053-6",
-    arxiv: "",
-    abstract: String.raw`In this paper, we find a necessary condition for the boundedness of the Hardy--Littlewood maximal operator on variable Lebesgue spaces $L^{p(\cdot)}(X)$ over spaces of homogeneous type $(X,d,\mu)$ satisfying the reverse doubling condition.`,
-    bibtex: `@article{karlovych2025necessary,
-  author = {Karlovych, O. and Shalukhina, A.},
-  title = {A necessary condition for the boundedness of the maximal operator on $L^{p(\\cdot)}$ over reverse doubling spaces of homogeneous type},
-  journal = {Analysis Mathematica},
-  volume = {51},
-  number = {1},
-  pages = {241--248},
-  year = {2025},
-  doi = {10.1007/s10476-024-00053-6},
+    abstract: String.raw`Let $(X,d,\mu)$ be a space of homogeneous type and $p(\cdot):X\to[1,\infty]$
+                        be a variable exponent. We show that if the measure $\mu$ is Borel-semiregular
+                        and reverse doubling, then the condition 
+                        $\operatornamewithlimits{ess\,inf}\limits_{x\in X}p(x)>1$ 
+                        is necessary for the boundedness of the Hardy-Littlewood maximal operator $M$ 
+                        on the variable Lebesgue space $L^{p(\cdot)}(X,d,\mu)$.`,
+    bibtex: `@article{SK25,
+  AUTHOR = {Karlovych, Oleksiy and Shalukhina, Alina},
+  TITLE = {A necessary condition for the boundedness of the maximal operator on $L^{p(\\cdot)}$ over reverse doubling spaces of homogeneous type},
+  JOURNAL = {Anal. Math.},
+  FJOURNAL = {Analysis Mathematica},
+  VOLUME = {51},
+  NUMBER = {1},
+  PAGES = {241--248},
+  YEAR = {2025},
+  DOI = {10.1007/s10476-024-00053-6},
 }`
   },
   {
