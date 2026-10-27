@@ -142,7 +142,7 @@ const PUBLICATIONS = [
 }`
   },
   {
-    id: "shalukhina2022extension",
+    id: "AS22",
     type: "Journal article",
     year: 2022,
     title: "On the extension of the reverse Hölder inequality for power functions on the real axis",
@@ -150,17 +150,26 @@ const PUBLICATIONS = [
     journal: "<em>Real Analysis Exchange</em>",
     details: "47.2, 425–434",
     doi: "https://doi.org/10.14321/realanalexch.47.2.1653382423",
-    arxiv: "",
-    abstract: String.raw`We consider the reverse Hölder inequality for power weights on the real line and obtain the exact bounds for the parameters where the inequality holds. The proof heavily relies on a fine analysis of the corresponding Muckenhoupt conditions.`,
-    bibtex: `@article{shalukhina2022extension,
-  author = {Shalukhina, A.},
-  title = {On the extension of the reverse H{\\"o}lder inequality for power functions on the real axis},
-  journal = {Real Analysis Exchange},
-  volume = {47},
-  number = {2},
-  pages = {425--434},
-  year = {2022},
-  doi = {10.14321/realanalexch.47.2.1653382423},
+    abstract: String.raw`We consider the class of all nonnegative on $\mathbb{R}_+$ functions such that 
+                        each of them satisfies the reverse Hölder inequality uniformly over all intervals 
+                        with some constant, the minimum value of which can be regarded as the corresponding 
+                        “norm” of a function. We compare this “norm” with the “norm” of the even extension 
+                        of a function from $\mathbb{R}_+$ on $\mathbb{R}$. In this paper, an upper estimate 
+                        for the ratio of such “norms” has been obtained. For the special case of power 
+                        functions on $\mathbb{R}_+$, we give the precise value of the “norm” increase caused 
+                        by even extension. This value is a lower estimate for the analogous quantity in the 
+                        case of arbitrary functions. It has been shown that the obtained upper and lower 
+                        estimates for the general case are asymptotically sharp.`,
+    bibtex: `@article{AS22,
+  AUTHOR = {Shalukhina, Alina},
+  TITLE = {On the extension of the reverse {H}\"older inequality for power functions on the real axis},
+  JOURNAL = {Real Anal. Exch.},
+  FJOURNAL = {Real Analysis Exchange},
+  VOLUME = {47},
+  NUMBER = {2},
+  PAGES = {425--434},
+  YEAR = {2022},
+  DOI = {10.14321/realanalexch.47.2.1653382423},
 }`
   }
 ];
