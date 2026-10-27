@@ -602,8 +602,15 @@ em, i {
   text-indent: -4ch;   /* Keeps the first line at its original position */
 }
 
-.brand-logo {
-  height: 28px; /* Adjust this number to make it bigger or smaller */
-  width: auto;
-  display: block;
+.brand {
+  font-family: var(--font-serif); /* Or var(--font-sans) */
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand-accent {
+  color: var(--accent);
 }
