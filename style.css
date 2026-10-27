@@ -594,3 +594,10 @@ em, i {
   word-break: break-word;
   padding-right: 2.5rem; /* Leaves room on the right so text never touches the copy icon */
 }
+
+/* Hanging indent ("otstup") for wrapped lines inside the BibTeX box */
+.bibtex-box .bib-line {
+  display: block;
+  padding-left: 4ch;   /* Indents any wrapped continuation line by 4 characters (past TITLE) */
+  text-indent: -4ch;   /* Keeps the first line at its original position */
+}
