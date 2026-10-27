@@ -603,7 +603,7 @@ em, i {
 }
 
 .brand-logo {
-  height: 36px; /* Adjust this number to make it bigger or smaller */
+  height: 28px; /* Adjust this number to make it bigger or smaller */
   width: auto;
   display: block;
 }
