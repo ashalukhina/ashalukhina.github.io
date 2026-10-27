@@ -601,3 +601,9 @@ em, i {
   padding-left: 4ch;   /* Indents any wrapped continuation line by 4 characters (past TITLE) */
   text-indent: -4ch;   /* Keeps the first line at its original position */
 }
+
+.brand-logo {
+  height: 36px; /* Adjust this number to make it bigger or smaller */
+  width: auto;
+  display: block;
+}
