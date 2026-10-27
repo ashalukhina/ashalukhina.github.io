@@ -639,3 +639,21 @@ em, i {
 section[id] {
   scroll-margin-top: 64px;
 }
+
+/* =========================================
+   PAGE-WIDE BEIGE HEADER
+   ========================================= */
+
+/* 1. Make the outer header full-width screen background beige */
+.site-header {
+  background-color: #F7F5F0 !important; /* A warm, sophisticated editorial beige */
+  border-bottom: 1px solid var(--border);
+}
+
+/* 2. Constrain the inner header content to match your page's 960px container width */
+.header-inner {
+  max-width: 960px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important; /* Matches the padding of your main content */
+  height: 52px !important;
+}
