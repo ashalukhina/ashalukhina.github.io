@@ -2,6 +2,31 @@
 // 1. YOUR PUBLICATIONS DATABASE
 // ============================================================================
 const PUBLICATIONS = [
+{
+    id: "AS26endpoints",
+    type: "Preprint",
+    year: 2026,
+    title: "The endpoints $p_-=1$ and $p_+=\infty$ for the maximal operator on $L^{p(\cdot)}$ over spaces of homogeneous type",
+    authors: "A. Shalukhina",
+    journal: "<em>Journal of Mathematical Analysis and Applications</em>",
+    details: "548.2, Paper no. 129419",
+    doi: "https://doi.org/10.1016/j.jmaa.2025.129419",
+    arxiv: "",
+    abstract: String.raw`We establish a self-improving property for the boundedness of the Hardy--Littlewood maximal operator on quasi-Banach lattices over spaces of homogeneous type. Our approach avoids the use of the Muckenhoupt $A_p$ condition, relying instead on structural properties of the lattice and the underlying geometry.`,
+    bibtex: `@article{AS25improve,
+  AUTHOR = {Shalukhina, Alina},
+  TITLE = {Self-improving boundedness of the maximal operator on quasi-Banach lattices over spaces of homogeneous type},
+  JOURNAL = {J. Math. Anal. Appl.}, 
+  FJOURNAL = {Journal of Mathematical Analysis and Applications},
+  VOLUME = {548},
+  NUMBER = {2},
+  YEAR = {2025},
+  PAGES = {Paper no. 129419},
+  DOI = {10.1016/j.jmaa.2025.129419},
+}`
+  },
+
+   
    {
     id: "KST26",
     type: "Journal article",
