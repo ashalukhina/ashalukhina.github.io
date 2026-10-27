@@ -160,7 +160,7 @@ const PUBLICATIONS = [
                         estimates for the general case are asymptotically sharp.`,
     bibtex: `@article{AS22,
   AUTHOR = {Shalukhina, Alina},
-  TITLE = {On the extension of the reverse {H}\\"older inequality for power functions on the real axis},
+  TITLE = {On the extension of the reverse {H}{\"o}lder inequality for power functions on the real axis},
   JOURNAL = {Real Anal. Exch.},
   FJOURNAL = {Real Analysis Exchange},
   VOLUME = {47},
@@ -231,11 +231,16 @@ const PUBLICATIONS = [
     year: 2024,
     title: "Maximal noncompactness of singular integral operators on $L^p$ spaces with power weights",
     authors: "O. Karlovych and A. Shalukhina",
-    journal: "<em>Tbilisi Analysis and PDE Seminar</em> (Trends in Mathematics 7), Birkhäuser, Cham",
+    journal: "<em>Tbilisi Analysis and PDE Seminar</em> (Trends in Mathematics 7, Birkhäuser)",
     details: "87–97",
     doi: "https://doi.org/10.1007/978-3-031-62894-8_9",
-    arxiv: "",
-    abstract: String.raw``,
+    abstract: String.raw`We consider the singular integral operator $A = aI + bS_\Gamma$ with constant 
+                        coefficients $a,b \in \mathbb{C}$, where $S_\Gamma$ is the Cauchy singular integral 
+                        operator over a curve $\Gamma$ in the complex plane. We discuss two situations 
+                        when the operator $A$ is maximally noncompact on the space $L^p(\Gamma, \varrho)$ 
+                        with $1<p<\infty$ and a power weight $\varrho$, that is, when its norm is equal 
+                        to its essential norm and to its Hausdorff measure of noncompactness. Our results 
+                        extend two results by Naum Krupnik obtained in early 1980s and in 2010.`,
     bibtex: String.raw`@incollection{KS24power,
   AUTHOR = {Karlovych, Oleksiy and Shalukhina, Alina},
   TITLE = {Maximal noncompactness of singular integral operators on {$L^p$} spaces with power weights},
@@ -244,7 +249,8 @@ const PUBLICATIONS = [
   SERIES = {Trends in Mathematics},
   VOLUME = {7},
   PAGES = {87--97},
-  PUBLISHER = {Birkh{\"a}user, Cham},
+  PUBLISHER = {Birkh{\"a}user},
+  ADDRESS = {Cham},
   YEAR = {2024},
   DOI = {10.1007/978-3-031-62894-8_9},
 }`
