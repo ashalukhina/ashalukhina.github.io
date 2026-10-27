@@ -15,7 +15,7 @@ const PUBLICATIONS = [
                         variable Lebesgue spaces $L^{p(\cdot)}(X)$ over spaces of homogeneous type for 
                         exponents $p(\cdot)$ which are bounded away from $1$ and $\infty$ and satisfy a 
                         local Muckenhoupt condition $\mathcal{A}_{\textnormal{loc}}(X)$. 
-                        This generalizes a Euclidean theorem of A.~K.~Lerner. 
+                        This generalizes a Euclidean theorem of A. K. Lerner. 
                         Our proof utilizes the machinery of adjacent dyadic grids.`,
     bibtex: `@article{KST26,
   AUTHOR = {Kopaliani, Tengiz and Shalukhina, Alina and Tephnadze, George},
