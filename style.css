@@ -48,7 +48,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 52px;
+  height: 60px;
 }
 .brand {
   font-family: var(--font-sans);
@@ -614,20 +614,25 @@ em, i {
   display: block;
 }
 
-/* 2. Make RESEARCH / PUBLICATIONS / CONTACT smaller while preserving exact original styles */
+/* 2. Make RESEARCH / PUBLICATIONS / CONTACT smaller while preserving exact original capitalization and grey color */
 .site-nav {
   display: flex;
   gap: 1.75rem;
 }
 
 .site-nav a {
-  font-size: 0.75rem !important; /* Smaller size */
-  color: var(--text) !important;  /* Ensures they stay your exact text color, not purple/blue */
+  font-size: 0.72rem !important;      /* Smaller size */
+  font-family: var(--font-sans);      /* Restores original font */
+  font-weight: 500;                   /* Restores original weight */
+  letter-spacing: 0.05em;             /* Restores original letter spacing */
+  color: var(--text-muted) !important;/* Restores exact original muted grey color */
+  text-transform: uppercase;          /* Keeps them capitalized */
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .site-nav a:hover {
-  color: var(--accent) !important; /* Preserves your accent red on hover */
+  color: var(--text) !important;      /* Turns darker/normal text color on hover */
 }
 
 /* 3. Offset anchor scrolling so sticky header doesn't cover section titles */
