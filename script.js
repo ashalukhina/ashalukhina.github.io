@@ -382,7 +382,7 @@ function renderPublications() {
               <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
             </svg>
           </button>
-          <pre class="bibtex-box">${p.bibtex}</pre>
+          <pre class="bibtex-box">${p.bibtex.trim().split('\n').map(line => `<span class="bib-line">${line.replace(/</g, '&lt;')}</span>`).join('\n')}</pre>
         </div>` : ""}
       </div>
     </article>
