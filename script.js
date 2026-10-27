@@ -199,11 +199,18 @@ const PUBLICATIONS = [
     year: 2024,
     title: "Maximal noncompactness of singular integral operators on $L^2$ spaces with some Khvedelidze weights",
     authors: "O. Karlovych and A. Shalukhina",
-    journal: "<em>Operator and Matrix Theory, Function Spaces, and Applications</em> (Operator Theory: Advances and Applications 295), Birkhäuser, Cham",
+    journal: "<em>Operator and Matrix Theory, Function Spaces, and Applications</em> (Operator Theory: Advances and Applications 295, Birkhäuser)",
     details: "279–295",
     doi: "https://doi.org/10.1007/978-3-031-50613-0_12",
-    arxiv: "",
-    abstract: String.raw``,
+    abstract: String.raw`Let $\Gamma$ be a contour in the complex plane consisting of a finite
+                        number of circular arcs joining the endpoints $-1$ and $1$, possibly 
+                        including the segment $[-1,1]$. We consider the singular integral operator 
+                        $A=aI+bS_\Gamma$ with constant coefficients $a,b\in\mathbb{C}$, where 
+                        $S_\Gamma$ is the Cauchy singular integral operator over $\Gamma$. We provide 
+                        a detailed proof of the maximal noncompactness of the operator $A$ on $L^2$ 
+                        spaces with the Khvedelidze weights $\varrho(t)=|t-1|^\beta |t+1|^{-\beta}$ 
+                        satisfying $-1<\beta<1$. This result was announced by Naum Krupnik 
+                        in 2010, but its proof has never been published.`,
     bibtex: String.raw`@incollection{KS24khvedelidze,
   AUTHOR = {Karlovych, Oleksiy and Shalukhina, Alina},
   TITLE = {Maximal noncompactness of singular integral operators on {$L^2$} spaces with some {K}hvedelidze weights},
@@ -212,7 +219,8 @@ const PUBLICATIONS = [
   SERIES = {Operator Theory: Advances and Applications},
   VOLUME = {295},
   PAGES = {279--295},
-  PUBLISHER = {Birkh{\"a}user, Cham},
+  PUBLISHER = {Birkh{\"a}user},
+  ADDRESS = {Cham},
   YEAR = {2024},
   DOI = {10.1007/978-3-031-50613-0_12},
 }`
