@@ -162,7 +162,7 @@ const PUBLICATIONS = [
                         estimates for the general case are asymptotically sharp.`,
     bibtex: `@article{AS22,
   AUTHOR = {Shalukhina, Alina},
-  TITLE = {On the extension of the reverse {H}\"older inequality for power functions on the real axis},
+  TITLE = {On the extension of the reverse {H}\\"older inequality for power functions on the real axis},
   JOURNAL = {Real Anal. Exch.},
   FJOURNAL = {Real Analysis Exchange},
   VOLUME = {47},
