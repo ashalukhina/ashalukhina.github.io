@@ -641,21 +641,19 @@ section[id] {
 }
 
 /* =========================================
-   PAGE-WIDE BEIGE HEADER (Contained to 960px)
+   PAGE-WIDE BEIGE HEADER (Matching the Cards)
    ========================================= */
 
-/* 1. Make the outer header full-width transparent */
+/* 1. Make the outer header full-width screen background match your card background */
 .site-header {
-  background-color: transparent !important;
-  border-bottom: none !important;
+  background-color: var(--bg-card, #f4f2ee) !important; /* Uses your exact box/card background variable */
+  border-bottom: 1px solid var(--border);
 }
 
-/* 2. Constrain the inner menu, apply the beige background, and put the border on it */
+/* 2. Constrain the inner header content to match your page's 960px container width */
 .header-inner {
   max-width: 960px !important;
   margin: 0 auto !important;
   padding: 0 1.5rem !important;
   height: 52px !important;
-  background-color: var(--bg-card, #f4f2ee) !important; /* Matches your cards */
-  border-bottom: 1px solid var(--border) !important;     /* Border stops exactly where the box ends */
 }
