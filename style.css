@@ -609,7 +609,7 @@ em, i {
 }
 
 .brand-logo {
-  height: 24px; /* Adjust between 22px and 26px to taste */
+  height: 22px; /* Adjust between 22px and 26px to taste */
   width: auto;
   display: block;
 }
@@ -621,7 +621,7 @@ em, i {
 }
 
 .site-nav a {
-  font-size: 0.72rem !important;      /* Smaller size */
+  font-size: 0.8rem !important;      /* Smaller size */
   font-family: var(--font-sans);      /* Restores original font */
   font-weight: 500;                   /* Restores original weight */
   letter-spacing: 0.05em;             /* Restores original letter spacing */
