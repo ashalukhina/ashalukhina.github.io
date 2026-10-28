@@ -689,7 +689,7 @@ section[id] {
   margin-top: 0 !important;
   font-family: var(--font-serif);
   font-size: 1.25rem !important;
-  font-weight: 600; /* Bold weight to match publication titles */
+  font-weight: normal; /* Returns the text to its elegant, lighter weight */
   color: var(--accent);
   text-decoration: none;
   display: inline-flex;
