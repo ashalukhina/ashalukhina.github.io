@@ -641,19 +641,83 @@ section[id] {
 }
 
 /* =========================================
-   PAGE-WIDE BEIGE HEADER (Matching the Cards)
+   HEADER, EMAILS & MATCHING FOOTER STRIP
    ========================================= */
 
-/* 1. Make the outer header full-width screen background match your card background */
+/* 1. Floating upper menu: exact grayish-beige of the boxes (--surface) + translucent blur */
 .site-header {
-  background-color: var(--bg-card, #f4f2ee) !important; /* Uses your exact box/card background variable */
-  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 82%, transparent) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border) !important;
 }
 
-/* 2. Constrain the inner header content to match your page's 960px container width */
-.header-inner {
+.header-inner,
+.nav-container {
   max-width: 960px !important;
   margin: 0 auto !important;
   padding: 0 1.5rem !important;
   height: 52px !important;
+}
+
+/* 2. Smaller, refined email links in Get in Touch */
+.email-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.email-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.email-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  min-width: 110px;
+}
+
+.email-link {
+  margin-top: 0 !important;
+  font-family: var(--font-serif);
+  font-size: 1.3rem !important; /* Reduced from 2rem to a clean, elegant size */
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.email-link:hover {
+  opacity: 0.75;
+}
+
+/*Remove bottom border on the last section since the footer strip now has a top border */
+#contact.section {
+  border-bottom: none;
+}
+
+/* 3. Screen-wide matching grayish strip for the footer */
+.site-footer {
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  border-top: 1px solid var(--border);
+  padding: 0 !important;
+  font-size: 0.82rem;
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
