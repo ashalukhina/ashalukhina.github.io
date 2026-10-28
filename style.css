@@ -677,25 +677,38 @@ section[id] {
 
 .email-label {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-muted);
-  min-width: 110px;
+  color: var(--text); /* Crisp black instead of muted grey */
+  min-width: 115px;
 }
 
 .email-link {
   margin-top: 0 !important;
   font-family: var(--font-serif);
-  font-size: 1.3rem !important; /* Reduced from 2rem to a clean, elegant size */
+  font-size: 1.25rem !important;
+  font-weight: 600; /* Bold weight to match publication titles */
   color: var(--accent);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   transition: opacity 0.15s ease;
 }
 
+.email-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
 .email-link:hover {
-  opacity: 0.75;
+  opacity: 0.85;
+}
+
+.email-link:hover .email-arrow {
+  transform: translateX(4px); /* Gently nudges the arrow right on hover */
 }
 
 /*Remove bottom border on the last section since the footer strip now has a top border */
