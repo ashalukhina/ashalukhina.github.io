@@ -21,7 +21,7 @@ const PUBLICATIONS = [
                         yields a boundedness criterion based on the Muckenhoupt condition alone.
                         We also construct an unbounded space where the Muckenhoupt 
                         condition suffices for the maximal operator's boundedness.`,
-    bibtex: `@misc{AS26endpoints,
+    bibtex: String.raw`@misc{AS26endpoints,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {The endpoints $p_-=1$ and $p_+=\infty$ for the maximal operator on $L^{p(\cdot)}$ over spaces of homogeneous type},
   HOWPUBLISHED = {Preprint, arXiv:2610.33792},
@@ -45,7 +45,7 @@ const PUBLICATIONS = [
                         local Muckenhoupt condition $\mathcal{A}_{\textnormal{loc}}(X)$. 
                         This generalizes a Euclidean theorem of A. K. Lerner. 
                         Our proof utilizes the machinery of adjacent dyadic grids.`,
-    bibtex: `@article{KST26,
+    bibtex: String.raw`@article{KST26,
   AUTHOR = {Kopaliani, Tengiz and Shalukhina, Alina and Tephnadze, George},
   TITLE = {Maximal operator on $L^{p(\cdot)}$ spaces over spaces of homogeneous type: {L}ocal boundedness},
   JOURNAL = {Georgian Math. J.},
@@ -73,7 +73,7 @@ const PUBLICATIONS = [
                       Hytönen--Kairema dyadic system on $X$. This extends Diening's well-known characterization 
                       of the boundedness of $M$ on $L^{p(\cdot)}(\mathbb{R}^n)$ to the setting of spaces of 
                       homogeneous type, while also providing a slight refinement of the original result.`,
-   bibtex: `@article{AS26cubes,
+   bibtex: String.raw`@article{AS26cubes,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {The maximal function on spaces of homogeneous type, or adjacent dyadic cubes do good},
   JOURNAL = {Anal. Math. Phys.},
@@ -100,7 +100,7 @@ const PUBLICATIONS = [
                         specialty of the proof for spaces of homogeneous type lies in using adjacent grids of Hytönen--Kairema dyadic 
                         cubes and studying the maximal operator alongside its “dyadic” version. Then we apply the obtained result to 
                         variable Lebesgue spaces over spaces of homogeneous type.`,
-    bibtex: `@article{AS25improve,
+    bibtex: String.raw`@article{AS25improve,
   AUTHOR = {Shalukhina, Alina},
   TITLE = {Self-improving boundedness of the maximal operator on quasi-Banach lattices over spaces of homogeneous type},
   JOURNAL = {J. Math. Anal. Appl.}, 
@@ -127,9 +127,9 @@ const PUBLICATIONS = [
                         $\operatornamewithlimits{ess\,inf}\limits_{x\in X}p(x)>1$ 
                         is necessary for the boundedness of the Hardy--Littlewood maximal operator $M$ 
                         on the variable Lebesgue space $L^{p(\cdot)}(X,d,\mu)$.`,
-    bibtex: `@article{SK25,
+    bibtex: String.raw`@article{SK25,
   AUTHOR = {Karlovych, Oleksiy and Shalukhina, Alina},
-  TITLE = {A necessary condition for the boundedness of the maximal operator on $L^{p(\\cdot)}$ over reverse doubling spaces of homogeneous type},
+  TITLE = {A necessary condition for the boundedness of the maximal operator on $L^{p(\cdot)}$ over reverse doubling spaces of homogeneous type},
   JOURNAL = {Anal. Math.},
   FJOURNAL = {Analysis Mathematica},
   VOLUME = {51},
@@ -158,9 +158,9 @@ const PUBLICATIONS = [
                         by even extension. This value is a lower estimate for the analogous quantity in the 
                         case of arbitrary functions. It has been shown that the obtained upper and lower 
                         estimates for the general case are asymptotically sharp.`,
-    bibtex: `@article{AS22,
+    bibtex: String.raw`@article{AS22,
   AUTHOR = {Shalukhina, Alina},
-  TITLE = {On the extension of the reverse {H}{\\"o}lder inequality for power functions on the real axis},
+  TITLE = {On the extension of the reverse {H}{\"o}lder inequality for power functions on the real axis},
   JOURNAL = {Real Anal. Exch.},
   FJOURNAL = {Real Analysis Exchange},
   VOLUME = {47},
