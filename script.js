@@ -23,7 +23,7 @@ const PUBLICATIONS = [
                         condition suffices for the maximal operator's boundedness.`,
     bibtex: String.raw`@misc{AS26endpoints,
   AUTHOR = {Shalukhina, Alina},
-  TITLE = {The endpoints $p_-=1$ and $p_+=\infty$ for the maximal operator on ${L^{p(\cdot)}}$ over spaces of homogeneous type},
+  TITLE = {The endpoints $p_-=1$ and $p_+=\infty$ for the maximal operator on $L^{p(\cdot)}$ over spaces of homogeneous type},
   HOWPUBLISHED = {Preprint, arXiv:2610.33792},
   YEAR = {2026},
   EPRINT = {2610.33792},
