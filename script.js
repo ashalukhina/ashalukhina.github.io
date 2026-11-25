@@ -6,7 +6,7 @@ const PUBLICATIONS = [
     id: "AS26route",
     type: "Preprint",
     year: 2026,
-    title: "A short route to Diening's averaging criterion in spaces of homogeneous type",
+    title: "A short route to Diening’s averaging criterion in spaces of homogeneous type",
     authors: "A. Shalukhina",
     journal: "<em>arXiv</em>",
     details: "Preprint",
