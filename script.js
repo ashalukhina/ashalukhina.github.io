@@ -3,6 +3,29 @@
 // ============================================================================
 const PUBLICATIONS = [
 {
+    id: "AS26route",
+    type: "Preprint",
+    year: 2026,
+    title: "A short route to Diening's averaging criterion in spaces of homogeneous type",
+    authors: "A. Shalukhina",
+    journal: "<em>arXiv</em>",
+    details: "Preprint",
+    arxiv: "https://doi.org/10.48550/arXiv.2611.15808",
+    abstract: String.raw`We present a short, self-contained proof of the averaging-operator criterion for the
+                         boundedness of the Hardy--Littlewood maximal operator on variable Lebesgue spaces
+                         over unbounded spaces of homogeneous type. Building on techniques of Diening and
+                         Lerner, we establish a Jensen-type inequality with uniformly summable error, from
+                         which the criterion follows directly via a Calderón--Zygmund argument.`,
+    bibtex: String.raw`@misc{AS26route,
+  AUTHOR = {Shalukhina, Alina},
+  TITLE = {A short route to {D}iening's averaging criterion in spaces of homogeneous type},
+  HOWPUBLISHED = {Preprint, arXiv:2611.15808},
+  YEAR = {2026},
+  EPRINT = {2611.15808},
+  ARCHIVEPREFIX = {arXiv},
+}`
+  },
+{
     id: "KST26approx",
     type: "Preprint",
     year: 2026,
@@ -11,8 +34,8 @@ const PUBLICATIONS = [
     journal: "<em>arXiv</em>",
     details: "Preprint",
     arxiv: "https://doi.org/10.48550/arXiv.2611.28041",
-    abstract: String.raw`We investigate approximation by Fej\'er and N\"orlund means with respect to
-                         the Walsh system in variable Lebesgue spaces. We prove that the Fej\'er
+    abstract: String.raw`We investigate approximation by Fejér and N\"orlund means with respect to
+                         the Walsh system in variable Lebesgue spaces. We prove that the Fejér
                          means are uniformly bounded on the weighted space $L_w^1[0,1)$ if and
                          only if $w \in A_1(\mathcal{D})$. We then apply Rubio de Francia
                          extrapolation to show that both means are uniformly bounded on
