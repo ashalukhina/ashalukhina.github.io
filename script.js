@@ -3,6 +3,33 @@
 // ============================================================================
 const PUBLICATIONS = [
 {
+    id: "KST26approx",
+    type: "Preprint",
+    year: 2026,
+    title: "Approximation by classical summability methods in variable Lebesgue spaces",
+    authors: "T. Kopaliani, A. Shalukhina, and G. Tephnadze",
+    journal: "<em>arXiv</em>",
+    details: "Preprint",
+    arxiv: "https://doi.org/10.48550/arXiv.2611.28041",
+    abstract: String.raw`We investigate approximation by Fej\'er and N\"orlund means with respect to
+                         the Walsh system in variable Lebesgue spaces. We prove that the Fej\'er
+                         means are uniformly bounded on the weighted space $L_w^1[0,1)$ if and
+                         only if $w \in A_1(\mathcal{D})$. We then apply Rubio de Francia
+                         extrapolation to show that both means are uniformly bounded on
+                         $L^{p(\cdot)}[0,1)$ with $1 \le p_- \le p_+ < \infty$ if and only if
+                         $p(\cdot) \in \mathcal{A}(\mathcal{D})$. Finally, we estimate the
+                         approximation errors via the modulus of smoothness and deduce
+                         convergence rates for variable Lipschitz classes.`,
+    bibtex: String.raw`@misc{KST26approx,
+  AUTHOR = {Kopaliani, Tengiz and Shalukhina, Alina and Tephnadze, George},
+  TITLE = {Approximation by classical summability methods in variable {L}ebesgue spaces},
+  HOWPUBLISHED = {Preprint, arXiv:2611.28041},
+  YEAR = {2026},
+  EPRINT = {2611.28041},
+  ARCHIVEPREFIX = {arXiv},
+}`
+  },
+{
     id: "AS26endpoints",
     type: "Preprint",
     year: 2026,
